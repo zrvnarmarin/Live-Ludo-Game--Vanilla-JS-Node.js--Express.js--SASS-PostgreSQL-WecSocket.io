@@ -13,3 +13,66 @@ body {
     box-sizing: border-box;
 }
 
+/* Player start area */
+
+.start-area-wrappers {
+    width: 300px;
+    height: 300px;
+    background-color: #1195e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-area {
+    width: 200px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+}
+
+.start-area-player-ring {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    transform-origin: center;
+    justify-self: center;
+    align-self: center;
+    border-radius: 50%;
+    background-color: #1195e4;
+}
+
+/* Board squares */
+
+.board-squares {
+    width: 150px;
+    height: 300px;
+    background-color: rgb(224, 215, 215);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+}
+
+.rotated {
+    transform-origin: center;
+    transform: rotateZ(90deg);
+    margin-left: 200px;
+}
+
+.board-square {
+    width: 47px;
+    height: 47px;
+    border: 1px solid black;
+}
+
+/* Center triangles */
+
+.triangles-center {
+    border-left: 150px solid var(--clr-blue);
+    border-right: 150px solid var(--clr-green);
+    border-bottom: 150px solid var(--clr-red);
+    border-top: 150px solid var(--clr-yellow);
+    display: inline-block;
+}
