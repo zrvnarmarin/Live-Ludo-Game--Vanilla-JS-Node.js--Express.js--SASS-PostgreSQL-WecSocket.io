@@ -1,0 +1,15 @@
+:root {
+    --clr-blue: hsl(200, 100%, 50%);
+    --clr-red: hsl(0, 100%, 50%);
+    --clr-green: hsl(136, 100%, 30%);
+    --clr-yellow: hsl(55, 100%, 50%);
+    --clr-border: hsl(0, 0%, 0%);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
