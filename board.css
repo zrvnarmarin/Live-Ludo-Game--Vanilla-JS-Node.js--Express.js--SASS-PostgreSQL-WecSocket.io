@@ -11,10 +11,12 @@ body {
     margin: 0;
     list-style: none;
     box-sizing: border-box;
-    
 }
 
+/* Board rows */
+
 .first-row,
+.second-row,
 .third-row {
     display: flex;
 }
@@ -61,15 +63,19 @@ body {
     gap: 1px;
 }
 
-.rotated {
-    transform-origin: center;
-    transform: rotateZ(90deg);
-}
-
 .board-square {
     width: 47px;
     height: 47px;
     border: 1px solid black;
+}
+
+.board-squares-rotated {
+    width: 300px;
+    height: 150px;
+    background-color: rgb(224, 215, 215);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
 }
 
 /* Center triangles */
