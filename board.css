@@ -14,6 +14,11 @@ body {
     
 }
 
+.first-row,
+.third-row {
+    display: flex;
+}
+
 /* Player start area */
 
 .start-area-wrapper {
@@ -71,8 +76,8 @@ body {
 
 .triangles-center {
     display: inline-block;
-    border-left: 150px solid var(--clr-blue);
-    border-right: 150px solid var(--clr-green);
-    border-bottom: 150px solid var(--clr-red);
-    border-top: 150px solid var(--clr-yellow);
+    border-left: 75px solid var(--clr-blue);
+    border-right: 75px solid var(--clr-green);
+    border-bottom: 75px solid var(--clr-red);
+    border-top: 75px solid var(--clr-yellow);
 }
