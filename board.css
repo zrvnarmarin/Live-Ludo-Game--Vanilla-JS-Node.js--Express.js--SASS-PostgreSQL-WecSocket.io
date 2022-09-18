@@ -11,11 +11,12 @@ body {
     margin: 0;
     list-style: none;
     box-sizing: border-box;
+    
 }
 
 /* Player start area */
 
-.start-area-wrappers {
+.start-area-wrapper {
     width: 300px;
     height: 300px;
     background-color: #1195e4;
@@ -58,7 +59,6 @@ body {
 .rotated {
     transform-origin: center;
     transform: rotateZ(90deg);
-    margin-left: 200px;
 }
 
 .board-square {
@@ -70,9 +70,9 @@ body {
 /* Center triangles */
 
 .triangles-center {
+    display: inline-block;
     border-left: 150px solid var(--clr-blue);
     border-right: 150px solid var(--clr-green);
     border-bottom: 150px solid var(--clr-red);
     border-top: 150px solid var(--clr-yellow);
-    display: inline-block;
 }
