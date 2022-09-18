@@ -1,4 +1,4 @@
-# Live-Ludo-Game--Vanilla-JS-
+# Live-Ludo-Game--Vanilla-JS-Node.js--Express.js--SASS-PostgreSQL-WecSocket.io
 
 This project is about building a live Ludo Game.
 The project will have 4 players which will be able to interact with each other from different computers.
