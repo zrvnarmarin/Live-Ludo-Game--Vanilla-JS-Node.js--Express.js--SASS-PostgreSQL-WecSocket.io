@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Game</title>
+    <link rel="stylesheet" href="board.css">
+    <script src="https://kit.fontawesome.com/2fd1fc0d1b.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <div class="board">
+        <!-- First row -->
+        <div class="first-row">
+            <div class="start-area-wrapper blue-player-start-area-wrapper">
+                <div class="start-area">
+                    <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
+                </div>
+            </div>
+            <div class="board-squares">
+                <div class="board-square"></div>
+                <div class="board-square board-square-arrow-holder">
+                    <i class="fa-sharp fa-solid fa-arrow-down yellow-arrow"></i>
+                </div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square"></div>
+            </div>
+            <div class="start-area-wrapper yellow-player-start-area-wrapper">
+                <div class="start-area">
+                    <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second row -->
+        <div class="second-row">
+        <div class="board-squares-rotated">
+            <div class="board-square"></div>
+            <div class="board-square blue-player-board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square board-square-arrow-holder">
+                <i class="fa-sharp fa-solid fa-arrow-right blue-arrow"></i>
+            </div>
+            <div class="board-square blue-player-board-square"></div>
+            <div class="board-square blue-player-board-square"></div>
+            <div class="board-square blue-player-board-square"></div>
+            <div class="board-square blue-player-board-square"></div>
+            <div class="board-square blue-player-board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+        </div>
+        <div class="triangles-center"></div>
+        <div class="board-squares-rotated">
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square green-player-board-square"></div>
+            <div class="board-square green-player-board-square"></div>
+            <div class="board-square green-player-board-square"></div>
+            <div class="board-square green-player-board-square"></div>
+            <div class="board-square green-player-board-square"></div>
+            <div class="board-square board-square-arrow-holder">
+                <i class="fa-sharp fa-solid fa-arrow-left green-arrow"></i>
+            </div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square"></div>
+            <div class="board-square green-player-board-square"></div>
+            <div class="board-square"></div>
+        </div>
+        </div>
+
+        <!-- Third row -->
+        <div class="third-row">
+            <div class="start-area-wrapper red-player-start-area-wrapper">
+                <div class="start-area">
+                    <div class="start-area-player-ring red-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring red-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring red-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring red-player-start-area-player-ring"></div>
+                </div>
+            </div>
+            <div class="board-squares">
+                <div class="board-square"></div>
+                <div class="board-square red-player-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square red-player-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square red-player-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square red-player-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square red-player-board-square"></div>
+                <div class="board-square red-player-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square board-square-arrow-holder">
+                    <i class="fa-sharp fa-solid fa-arrow-up red-arrow"></i>
+                </div>
+                <div class="board-square"></div>
+            </div>
+            <div class="start-area-wrapper green-player-start-area-wrapper">
+                <div class="start-area">
+                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
