@@ -1,0 +1,121 @@
+/* Dice general classes */
+
+.dice-side {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border: 1px solid black;
+}
+
+.dice-number-ring {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* Side one */
+.side-one {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Side two */
+.side-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.side-two-column-one {
+   align-self: end;
+   margin: 26px;
+}
+
+.side-two-column-two {
+    align-self: start;
+    margin: 26px;
+}
+
+/* Side three */
+.side-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.side-three-column-one {
+    margin: 26px 0px 0px 26px;
+}
+
+.side-three-column-two {
+    justify-self: center; 
+    align-self: center;
+}
+
+.side-three-column-three {
+    justify-self: end;
+    align-self: end;
+    margin: 0px 26px 26px 0px;
+}
+
+/* Side four */
+.side-four {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.side-four-column-one {
+   align-self: end;
+   margin: 26px;
+}
+
+.side-four-column-two {
+    align-self: start;
+    margin: 26px;
+}
+
+/* Side five */
+.side-five {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.side-five-column-one {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.side-five-column-two {
+    justify-self: center; 
+    align-self: center;
+}
+
+.side-five-column-three {
+   display: flex;
+   justify-content: space-around;
+   align-items: flex-start;
+}
+
+/* Side six */
+.side-six {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.side-six-column-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+
+.side-six-column-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
