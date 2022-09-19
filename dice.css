@@ -6,6 +6,12 @@
     --br-dice-side: 10px;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Dice general classes */
 
 .dice-side {
@@ -133,3 +139,4 @@
     align-items: center;
     gap: 13px;
 }
+
