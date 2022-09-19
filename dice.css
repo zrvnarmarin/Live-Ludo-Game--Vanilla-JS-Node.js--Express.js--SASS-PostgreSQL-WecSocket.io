@@ -30,6 +30,7 @@
 }
 
 /* Side two */
+
 .side-two {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -46,6 +47,7 @@
 }
 
 /* Side three */
+
 .side-three {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -67,6 +69,7 @@
 }
 
 /* Side four */
+
 .side-four {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -83,6 +86,7 @@
 }
 
 /* Side five */
+
 .side-five {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
@@ -106,6 +110,7 @@
 }
 
 /* Side six */
+
 .side-six {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
