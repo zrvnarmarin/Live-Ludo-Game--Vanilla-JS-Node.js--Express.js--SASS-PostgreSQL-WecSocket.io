@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="side-one">
+        <div class="ring-one"></div>
+    </div>
+
+    <div class="side-two">
+        <div class="ring-two-left"></div>
+        <div class="ring-two-right"></div>
+    </div>
+
+    <style>
+        .side-two {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .ring-two-left {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+            align-self: flex-end;
+            margin: 0px 0px 30px 30px;
+        }
+
+        .ring-two-right {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+            align-self: flex-start;
+            justify-self: end;
+            margin: 30px 30px 0px 0px;
+        }
+
+        .side-one {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .ring-one {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+            place-self: center;
+        }
+    </style>
+
+    
+</body>
+</html>
