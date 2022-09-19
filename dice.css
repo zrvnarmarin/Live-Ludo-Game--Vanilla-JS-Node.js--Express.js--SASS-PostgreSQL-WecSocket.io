@@ -3,6 +3,7 @@
     --clr-dice-border: black;
     --clr-dice-number-ring: white;
     --clr-dice-number-ring-border: black;
+    --br-dice-side: 10px;
 }
 
 /* Dice general classes */
@@ -12,6 +13,7 @@
     height: 150px;
     background-color: var(--clr-dice-side);
     border: 1px solid var(--clr-dice-border);
+    border-radius: var(--br-dice-side);
 }
 
 .dice-number-ring {
