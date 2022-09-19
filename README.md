@@ -9,3 +9,12 @@ Technologies I will be using are:
 1) Frontend - HTML, CSS (with SASS preprocessor) and Vanilla Javascript. I was thinking about using Vue.js framework to make things faster, but with this project I really want to push my current Javascript knowledge to the edge. Hopefully that will be enough of a challenge.
 2) Backend - Node.js and Express.js for interacting with Web Sockets and database; I will be using Web Sockets for live session of the game and the chat feature
 3) DataBase Management System - PostgreSQL --> this may change, at the time of writing this document I consider relational database as the right solution for this kind of project, and because I have solid experience with it, but one thing at the time.
+
+18.9.2022
+Board finished!
+
+19.9.2022
+Dice finished!
+- dice sides, dice rings, dice body, and dice animation
+
+20.9.2022

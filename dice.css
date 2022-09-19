@@ -16,6 +16,7 @@ body {
 
 /* Remove dice width and height in the future! */
 .dice {
+    position: relative;
     width: 150px;
     height: 150px;
     transform-style: preserve-3d;
