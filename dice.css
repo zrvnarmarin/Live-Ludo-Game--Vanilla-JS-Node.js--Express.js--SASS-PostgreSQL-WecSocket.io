@@ -2,7 +2,7 @@
     --clr-dice-side: red;
     --clr-dice-border: black;
     --clr-dice-number-ring: white;
-    --clr-dice-ring-border: black;
+    --clr-dice-number-ring-border: black;
 }
 
 /* Dice general classes */
@@ -17,7 +17,7 @@
 .dice-number-ring {
     width: 20px;
     height: 20px;
-    border: 1px solid var(--clr-dice-ring-border);
+    border: 1px solid var(--clr-dice-number-ring-border);
     border-radius: 50%;
     background-color: var(--clr-dice-number-ring);
 }
@@ -119,15 +119,15 @@
 .side-six-column-one {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 13px;
 }
 
 .side-six-column-two {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 13px;
 }
