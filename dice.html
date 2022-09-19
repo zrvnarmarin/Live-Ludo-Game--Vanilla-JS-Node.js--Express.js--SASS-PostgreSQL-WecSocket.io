@@ -8,6 +8,7 @@
 </head>
 <body>
     
+    <!-- Side one and side two -->
     <div class="side-one">
         <div class="ring-one"></div>
     </div>
@@ -16,7 +17,7 @@
         <div class="ring-two-left"></div>
         <div class="ring-two-right"></div>
     </div>
-
+    
     <style>
         .side-two {
             width: 150px;
@@ -64,6 +65,208 @@
             border-radius: 50%;
             background-color: white;
             place-self: center;
+        }
+    </style>
+
+    <!-- Side three  -->
+
+    <div class="side-three">
+        <div class="ring-three-left"></div>
+        <div class="ring-three-middle"></div>
+        <div class="ring-three-right"></div>
+    </div>
+
+    <style>
+        .side-three {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .ring-three-left {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+            align-self: flex-end;
+            margin: 0px 0px 30px 30px;
+        }
+
+        .ring-three-middle {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+            align-self: center;
+            justify-self: center;
+        }
+
+        .ring-three-right {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+            align-self: flex-start;
+            justify-self: end;
+            margin: 30px 30px 0px 0px;       
+        }
+
+
+    </style>
+
+    <!-- Side four -->
+
+    <div class="side-four">
+        <div class="rings-left">
+            <div class="first-ring"></div>
+            <div class="second-ring"></div>
+        </div>
+        <div class="rings-right">
+            <div class="first-ring"></div>
+            <div class="second-ring"></div>
+        </div>
+    </div>
+
+    <style>
+        .side-four {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .rings-left {
+           display: grid;
+           grid-template-columns: repeat(1, 1fr);
+           margin: 30px 0px 0px 30px;
+        }
+
+        .rings-right {
+            display: grid;
+           grid-template-columns: repeat(1, 1fr);
+           margin: 30px 0px 0px 30px;
+        }
+
+        .first-ring,
+        .second-ring {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+        }
+    </style>
+
+    <!-- Side five -->
+
+    <div class="side-five">
+        <div class="rings-left">
+            <div class="first-ring"></div>
+            <div class="second-ring"></div>
+        </div>
+        <div class="side-five-middle-ring"></div>
+        <div class="rings-right">
+            <div class="first-ring"></div>
+            <div class="second-ring"></div>
+        </div>
+    </div>
+
+    <style>
+        .side-five {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .side-five .rings-left {
+           display: grid;
+           grid-template-columns: repeat(1, 1fr);
+           margin: 30px 0px 0px 30px;
+        }
+
+        .side-five .rings-right {
+            display: grid;
+           grid-template-columns: repeat(1, 1fr);
+           margin: 30px 0px 0px 0px;
+        }
+
+        .side-five-middle-ring {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .side-five .first-ring,
+        .side-five .second-ring {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+        }
+    </style>
+
+    <!-- Side six -->
+
+    <div class="side-six">
+        <div class="rings-left">
+            <div class="first-ring"></div>
+            <div class="second-ring"></div>
+            <div class="third-ring"></div>
+        </div>
+        <div class="rings-right">
+            <div class="first-ring"></div>
+            <div class="second-ring"></div>
+            <div class="third-ring"></div>
+        </div>
+    </div>
+
+    <style>
+        .side-six {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .rings-left {
+           display: grid;
+           grid-template-columns: repeat(1, 1fr);
+           margin: 30px 0px 0px 30px;
+        }
+
+        .rings-right {
+            display: grid;
+           grid-template-columns: repeat(1, 1fr);
+           margin: 30px 0px 0px 30px;
+        }
+
+        .first-ring,
+        .second-ring,
+        .third-ring {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+            
         }
     </style>
 
