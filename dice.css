@@ -14,12 +14,23 @@ body {
 
 /* Dice general classes */
 
+/* Remove dice width and height in the future! */
+.dice {
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    /* perspective: 700px; OVO ISTRAZITI JOŠ!! */
+    perspective-origin: 40% 40%;
+    animation: rotate 5s linear infinite;
+    margin-top: 400px;
+}
+
 .dice-side {
+    position: absolute;
     width: 150px;
     height: 150px;
     background-color: var(--clr-dice-side);
     border: 1px solid var(--clr-dice-border);
-    border-radius: var(--br-dice-side);
 }
 
 .dice-number-ring {
@@ -140,3 +151,40 @@ body {
     gap: 13px;
 }
 
+/* Dice utillity classes for 3D transform style */
+
+.front {
+    transform: rotateX(0deg) translateZ(75px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(75px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(75px);
+}
+
+.left {
+    transform: rotateX(90deg) rotateY(90deg)  translateZ(-75px) translateX(0px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(75px);
+}
+
+.back {
+    transform: rotateY(-180deg) translateZ(75px);
+}
+
+/* Dice animation */
+/* For rotating the cube on X axis, just change to rotateX in from and to part */
+
+@keyframes rotate {
+    from {
+      transform: rotateY(0) rotateX(45deg) rotateZ(45deg);
+    }
+    to {
+      transform: rotateY(360deg) rotateX(45deg) rotateZ(45deg);
+    }
+  }
