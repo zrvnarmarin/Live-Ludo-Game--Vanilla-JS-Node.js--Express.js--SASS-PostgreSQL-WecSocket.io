@@ -168,9 +168,6 @@
 
     <script>
         const divs = document.querySelectorAll('.test')
-        divs.forEach(div => {
-            console.log(div.getClientRects())
-        })
 
         const getElementOriginPoint = (element) => {
             const elementRects = [...element.getClientRects()]
@@ -185,6 +182,7 @@
             })
 
             console.log(elementOriginPoint)
+            return elementOriginPoint
         }
 
         divs.forEach(div => {
