@@ -143,6 +143,9 @@ body {
     width: 47px;
     height: 47px;
     border: 1px solid var(--clr-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .board-squares-rotated {

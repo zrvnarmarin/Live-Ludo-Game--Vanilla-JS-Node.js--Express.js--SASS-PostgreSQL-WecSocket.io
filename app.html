@@ -147,13 +147,12 @@
     </div>
 
     <div class="test">
-        Nesto
+        
     </div>
     <div class="test">
-        Nesto
+        
     </div>
     <div class="test">
-        Nesto
     </div>
 
     <style>
@@ -163,6 +162,9 @@
             background-color: blue;
             border: 1px solid black;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .player {
@@ -174,29 +176,17 @@
         }
     </style>
 
-    <script defer type="module">
-        import {getElementOriginPoint} from './utillityFunctions.js'
-
-        // Getting origin points of all board squares
-        const boardSquares = document.querySelectorAll('.board-square')
-
-        boardSquares.forEach(div => {
-            console.log(getElementOriginPoint(div))
-        })
-        
-
-        // Show mouse screen coordinates
-        onclick = function(e){console.log("mouse location:", 'X: ' + e.clientX, 'Y: ' + e.clientY)}
-
-        // create player
+    <script defer>
+        const testDivs = document.querySelectorAll('.test')
         const player = document.createElement('div')
         player.classList.add('player')
-        document.body.append(player)
 
-        // mouse coordinates on the screen
-        onclick = function func(e) {
-            console.log(e.x, e.y)
-        }
+        testDivs.forEach(div => {
+            div.classList.add('boards')
+            div.addEventListener('click', () => {
+                div.append(player)
+            })
+        })
 
         
     </script>
