@@ -164,37 +164,40 @@
             border: 1px solid black;
             color: white;
         }
+
+        .player {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: red;
+            border: 1px solid black;
+        }
     </style>
 
     <script defer type="module">
-        import { getMouseWindowCoordinates } from './utillityFunctions.js'
-        const divs = document.querySelectorAll('.test')
+        import {getElementOriginPoint} from './utillityFunctions.js'
 
-        const getElementOriginPoint = (element) => {
-            const elementRects = [...element.getClientRects()]
-            let elementOriginPoint = {}
+        // Getting origin points of all board squares
+        const boardSquares = document.querySelectorAll('.board-square')
 
-            elementRects.forEach(rectElement => {
-                const { top, right, bottom, left } = rectElement
-                elementOriginPoint = {
-                    x: (left + right) / 2,
-                    y: (top + bottom) / 2,
-                }
-            })
-
-            console.log(elementOriginPoint)
-            return elementOriginPoint
-        }
-
-        divs.forEach(div => {
-            getElementOriginPoint(div)
+        boardSquares.forEach(div => {
+            console.log(getElementOriginPoint(div))
         })
         
 
         // Show mouse screen coordinates
         onclick = function(e){console.log("mouse location:", 'X: ' + e.clientX, 'Y: ' + e.clientY)}
 
-        getMouseWindowCoordinates()
+        // create player
+        const player = document.createElement('div')
+        player.classList.add('player')
+        document.body.append(player)
+
+        // mouse coordinates on the screen
+        onclick = function func(e) {
+            console.log(e.x, e.y)
+        }
+
         
     </script>
 
