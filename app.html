@@ -163,12 +163,6 @@
     <script>
         const div = document.querySelector('.test')
         console.log(div)
-        // console.log(Array.from(div.getClientRects()))
-        const array = [...div.getClientRects()]
-        array.map(element => {
-            const { top, left, bottom, right } = element
-            console.log(top, left, bottom, right)
-        })
 
         const getElementOriginPoint = (element) => {
             const elementRects = [...element.getClientRects()]
