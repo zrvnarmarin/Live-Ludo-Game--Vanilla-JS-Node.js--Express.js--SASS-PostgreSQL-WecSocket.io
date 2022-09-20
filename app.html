@@ -166,7 +166,8 @@
         }
     </style>
 
-    <script>
+    <script defer type="module">
+        import { getMouseWindowCoordinates } from './utillityFunctions.js'
         const divs = document.querySelectorAll('.test')
 
         const getElementOriginPoint = (element) => {
@@ -192,6 +193,8 @@
 
         // Show mouse screen coordinates
         onclick = function(e){console.log("mouse location:", 'X: ' + e.clientX, 'Y: ' + e.clientY)}
+
+        getMouseWindowCoordinates()
         
     </script>
 

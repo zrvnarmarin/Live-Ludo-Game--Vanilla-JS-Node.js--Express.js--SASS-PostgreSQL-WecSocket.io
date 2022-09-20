@@ -13,3 +13,6 @@ export const getElementOriginPoint = (element) => {
 
     return elementOriginPoint
 }
+
+// re-write this as a window.document function
+onclick = function(e){console.log("mouse location:", 'X: ' + e.clientX, 'Y: ' + e.clientY)}
