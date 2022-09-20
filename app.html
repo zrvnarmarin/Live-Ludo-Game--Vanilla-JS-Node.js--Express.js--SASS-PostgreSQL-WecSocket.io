@@ -146,5 +146,54 @@
         </div>
     </div>
 
+    <div class="test">
+        Nesto
+    </div>
+
+    <style>
+        .test {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 1px solid black;
+            color: white;
+        }
+    </style>
+
+    <script>
+        const div = document.querySelector('.test')
+        console.log(div)
+        // console.log(Array.from(div.getClientRects()))
+        const array = [...div.getClientRects()]
+        array.map(element => {
+            const { top, left, bottom, right } = element
+            console.log(top, left, bottom, right)
+        })
+
+        const getElementOriginPoint = (element) => {
+            const elementRects = [...element.getClientRects()]
+            let elementCoordinates = {}
+
+            elementRects.forEach(rectElement => {
+                const { top, right, bottom, left } = rectElement
+                elementCoordinates = {
+                    top: top,
+                    right: right,
+                    bottom: bottom,
+                    left: left,
+                }
+            })
+
+            console.log(elementCoordinates)
+        }
+
+        getElementOriginPoint(div)
+        
+
+        // Show mouse screen coordinates
+        onclick = function(e){console.log("mouse location:", 'X: ' + e.clientX, 'Y: ' + e.clientY)}
+        
+    </script>
+
 </body>
 </html>
