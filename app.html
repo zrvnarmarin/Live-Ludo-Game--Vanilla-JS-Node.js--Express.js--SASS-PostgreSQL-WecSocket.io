@@ -149,6 +149,12 @@
     <div class="test">
         Nesto
     </div>
+    <div class="test">
+        Nesto
+    </div>
+    <div class="test">
+        Nesto
+    </div>
 
     <style>
         .test {
@@ -161,27 +167,29 @@
     </style>
 
     <script>
-        const div = document.querySelector('.test')
-        console.log(div)
+        const divs = document.querySelectorAll('.test')
+        divs.forEach(div => {
+            console.log(div.getClientRects())
+        })
 
         const getElementOriginPoint = (element) => {
             const elementRects = [...element.getClientRects()]
-            let elementCoordinates = {}
+            let elementOriginPoint = {}
 
             elementRects.forEach(rectElement => {
                 const { top, right, bottom, left } = rectElement
-                elementCoordinates = {
-                    top: top,
-                    right: right,
-                    bottom: bottom,
-                    left: left,
+                elementOriginPoint = {
+                    x: (left + right) / 2,
+                    y: (top + bottom) / 2,
                 }
             })
 
-            console.log(elementCoordinates)
+            console.log(elementOriginPoint)
         }
 
-        getElementOriginPoint(div)
+        divs.forEach(div => {
+            getElementOriginPoint(div)
+        })
         
 
         // Show mouse screen coordinates
