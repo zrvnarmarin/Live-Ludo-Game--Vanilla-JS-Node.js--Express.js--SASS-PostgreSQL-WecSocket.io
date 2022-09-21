@@ -23,3 +23,4 @@ I made utillity function for finding origin (center) point of any given HTML ele
 Prototyped player movement with tracking current mouse position and handling dummy player`s top and left properties.
 
 21.9.2022
+- further prototyping player movement - now through the waypoints which will be saved in the array 
