@@ -13,3 +13,14 @@ export const getElementOriginPoint = (element) => {
 
     return elementOriginPoint
 }
+
+// Get origin(central) top and left point of any HTML element
+export const getTopAndLeftElementOriginPoint = (element) => {
+    let xPos = (element.offsetLeft - element.scrollLeft + element.clientLeft);
+    let yPos = (element.offsetTop - element.scrollTop + element.clientTop);
+
+    return {
+        x: xPos,
+        y: yPos
+    };
+}
