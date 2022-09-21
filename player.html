@@ -35,7 +35,8 @@
         }
     </style>
     
-    <script>
+    <script type="module">
+        import {getElementOriginPoint} from './utillityFunctions.js'
 
         let testPlayer = document.querySelector("#test-player");
         let contentContainer = document.querySelector("#contentContainer");
@@ -45,9 +46,11 @@
         function moveElementToMouseCoordinates(e) {
             let parentPosition = getTopAndLeftElementOriginPosition(e.currentTarget);
 
-            let xPosition = e.clientX - parentPosition.x - (testPlayer.clientWidth / 2);
-            let yPosition = e.clientY - parentPosition.y - (testPlayer.clientHeight / 2);
+            let xPosition = e.clientX - parentPosition.x - (getElementOriginPoint(testPlayer).x);
+            let yPosition = e.clientY - parentPosition.y - (getElementOriginPoint(testPlayer).y);
             
+            console.log(getElementOriginPoint(testPlayer).x, getElementOriginPoint(testPlayer).y)
+
             testPlayer.style.left = xPosition + "px";
             testPlayer.style.top = yPosition + "px";
         }
