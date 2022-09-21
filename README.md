@@ -19,5 +19,7 @@ Dice finished!
 
 20.9.2022
 Player created! And some player movement, but still work in the progress.
+I made utillity function for finding origin (center) point of any given HTML element in the browser.
+Prototyped player movement with tracking current mouse position and handling dummy player`s top and left properties.
 
 21.9.2022
