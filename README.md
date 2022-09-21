@@ -18,3 +18,6 @@ Dice finished!
 - dice sides, dice rings, dice body, and dice animation
 
 20.9.2022
+Player created! And some player movement, but still work in the progress.
+
+21.9.2022
