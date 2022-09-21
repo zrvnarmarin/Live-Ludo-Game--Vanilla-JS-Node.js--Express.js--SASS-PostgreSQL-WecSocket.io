@@ -146,50 +146,5 @@
         </div>
     </div>
 
-    <div class="test">
-        
-    </div>
-    <div class="test">
-        
-    </div>
-    <div class="test">
-    </div>
-
-    <style>
-        .test {
-            width: 100px;
-            height: 100px;
-            background-color: blue;
-            border: 1px solid black;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .player {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: red;
-            border: 1px solid black;
-        }
-    </style>
-
-    <script defer>
-        const testDivs = document.querySelectorAll('.test')
-        const player = document.createElement('div')
-        player.classList.add('player')
-
-        testDivs.forEach(div => {
-            div.classList.add('boards')
-            div.addEventListener('click', () => {
-                div.append(player)
-            })
-        })
-
-        
-    </script>
-
 </body>
 </html>
