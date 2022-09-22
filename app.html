@@ -178,13 +178,21 @@
         })
         console.log('waypoints: ', wayPoints)
 
+        // Displaying waypoint indexes on each board square
+        wayPoints.forEach(waypoint => {
+            const {boardSquare, wayPointIndex} = waypoint
+            const index = document.createElement('p')
+            index.innerText = wayPointIndex
+            boardSquare.append(index)
+        })
+
         // Movement
         let index = -1
 
         const testPlayer = document.createElement('div')
         testPlayer.classList.add('test-player-div')
 
-         let interval = setInterval(() => {
+        let interval = setInterval(() => {
             index++
             const { boardSquare, x, y } = wayPoints[index]
             testPlayer.style.top = y + 'px'
@@ -195,9 +203,7 @@
             console.log(testPlayer.style.top, testPlayer.style.left)
 
             if (index === wayPoints[70]) console.log('gotov krug!')
-
-            
-        }, 20)
+        }, 2000)
 
     </script>
 
