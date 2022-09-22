@@ -186,6 +186,21 @@
             boardSquare.append(index)
         })
 
+        // Determining yellow player path
+        const yellowPlayerPath = [
+        wayPoints[5], wayPoints[8], wayPoints[11], wayPoints[14], wayPoints[17],
+        wayPoints[36], wayPoints[37], wayPoints[38], wayPoints[39], wayPoints[40],
+        wayPoints[41], wayPoints[47], wayPoints[53], wayPoints[51], wayPoints[50],
+        wayPoints[49], wayPoints[48], wayPoints[56], wayPoints[59], wayPoints[62],
+        wayPoints[65], wayPoints[68], wayPoints[71], wayPoints[70], wayPoints[69],
+        wayPoints[63], wayPoints[60], wayPoints[57], wayPoints[54],
+        wayPoints[35], wayPoints[34], wayPoints[33], wayPoints[32], wayPoints[31],
+        wayPoints[30], wayPoints[24], wayPoints[18], wayPoints[20], wayPoints[21],
+        wayPoints[22], wayPoints[23], wayPoints[15], wayPoints[12], wayPoints[9],
+        wayPoints[6], wayPoints[3], wayPoints[0], wayPoints[1], wayPoints[4],
+        wayPoints[7], wayPoints[10], wayPoints[13], wayPoints[16]
+        ]
+
         // Movement
         let index = -1
 
@@ -194,7 +209,7 @@
 
         let interval = setInterval(() => {
             index++
-            const { boardSquare, x, y } = wayPoints[index]
+            const { boardSquare, x, y } = yellowPlayerPath[index]
             testPlayer.style.top = y + 'px'
             testPlayer.style.left = x + 'px'
             boardSquare.append(testPlayer)
@@ -203,7 +218,7 @@
             console.log(testPlayer.style.top, testPlayer.style.left)
 
             if (index === wayPoints[70]) console.log('gotov krug!')
-        }, 2000)
+        }, 200)
 
     </script>
 
