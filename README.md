@@ -27,3 +27,4 @@ Prototyped player movement with tracking current mouse position and handling dum
 
 22.9.2022
 - all player`s possible path waypoints done
+- player moves on the board squares in the interval of 2 seconds
