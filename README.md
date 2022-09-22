@@ -24,3 +24,6 @@ Prototyped player movement with tracking current mouse position and handling dum
 
 21.9.2022
 - further prototyping player movement - now through the waypoints which will be saved in the array 
+
+22.9.2022
+I finally figured out a way how to visualize all player`s possible path waypoints!
