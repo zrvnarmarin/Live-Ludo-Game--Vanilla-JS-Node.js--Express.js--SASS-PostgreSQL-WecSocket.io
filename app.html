@@ -147,56 +147,34 @@
 
     </div>
 
-    <script>
-        const getElementOriginPoint = (element) => {
-            return {
-                x: element.clientWidth / 2,
-                y: element.clientHeight / 2
-            }
-    	}
-
-        const getTopAndLeftElementOriginPoint = (element) => {
-            let xPos = (element.offsetLeft - element.scrollLeft + element.clientLeft);
-            let yPos = (element.offsetTop - element.scrollTop + element.clientTop);
-
-            return {
-                x: xPos,
-                y: yPos
-            };
-        }
-
-        function getPosition(element) {
-            const {top, left} = element.getBoundingClientRect();
-            return {
-                left: left,
-                top: top
-            };
-        }
-
+    <script type="module" defer>
+        import {getElementOriginPoint, getElementPositionRelativeToTheViewport} from './utillityFunctions.js'
+        
         const boardSquares = [...document.getElementsByClassName('board-square')]
         const player = document.querySelector('.test-player-div')
         const board = document.querySelector('.board')
         
-        // player.style.top = getPosition(boardSquares[2]).top + getElementOriginPoint(boardSquares[2]).y / 2 + 'px'
-        // player.style.left = getPosition(boardSquares[2]).left + getElementOriginPoint(boardSquares[2]).x / 2 + 'px'
-        // player.style.backgroundColor = 'yellow'
-
-        // console.log(getPosition(boardSquares[2]).top, getPosition(boardSquares[2]).left)
-        // console.log(player.style.top, player.style.left)
-
-        boardSquares.forEach((board, index) => {
+        const wayPoints = []
+        boardSquares.forEach((boardSquare, index) => {
             const player = document.createElement('div')
             player.classList.add('test-player-div')
 
-            player.style.top = getPosition(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2 + 'px'
-            player.style.left = getPosition(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2 + 'px'
+            // Create a waypoint
+            const waypoint = {
+                x: getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2,
+                y: getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2
+            }
+            wayPoints.push(waypoint)
+
+            // Visualizing waypoint
+            player.style.top = getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2 + 'px'
+            player.style.left = getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2 + 'px'
             player.style.backgroundColor = 'yellow'
 
-            console.log('Board square coordinates: ', getPosition(boardSquares[index]).top, getPosition(boardSquares[index]).left)
-            console.log('Faking player coordinates: ',player.style.top, player.style.left)
-
-            board.append(player)
+            boardSquare.append(player)
         })
+        console.log('waypoints: ', wayPoints)
+
     </script>
 
     
