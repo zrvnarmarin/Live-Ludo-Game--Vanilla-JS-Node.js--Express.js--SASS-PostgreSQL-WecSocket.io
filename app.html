@@ -144,7 +144,84 @@
                 </div>
             </div>
         </div>
+
     </div>
+
+    <script>
+        const getElementOriginPoint = (element) => {
+            return {
+                x: element.clientWidth / 2,
+                y: element.clientHeight / 2
+            }
+    	}
+
+        const getTopAndLeftElementOriginPoint = (element) => {
+            let xPos = (element.offsetLeft - element.scrollLeft + element.clientLeft);
+            let yPos = (element.offsetTop - element.scrollTop + element.clientTop);
+
+            return {
+                x: xPos,
+                y: yPos
+            };
+        }
+
+        function getPosition(element) {
+            const {top, left} = element.getBoundingClientRect();
+            return {
+                left: left,
+                top: top
+            };
+        }
+
+        const boardSquares = [...document.getElementsByClassName('board-square')]
+        const player = document.querySelector('.test-player-div')
+        const board = document.querySelector('.board')
+        
+        // player.style.top = getPosition(boardSquares[2]).top + getElementOriginPoint(boardSquares[2]).y / 2 + 'px'
+        // player.style.left = getPosition(boardSquares[2]).left + getElementOriginPoint(boardSquares[2]).x / 2 + 'px'
+        // player.style.backgroundColor = 'yellow'
+
+        // console.log(getPosition(boardSquares[2]).top, getPosition(boardSquares[2]).left)
+        // console.log(player.style.top, player.style.left)
+
+        boardSquares.forEach((board, index) => {
+            const player = document.createElement('div')
+            player.classList.add('test-player-div')
+
+            player.style.top = getPosition(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2 + 'px'
+            player.style.left = getPosition(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2 + 'px'
+            player.style.backgroundColor = 'yellow'
+
+            console.log('Board square coordinates: ', getPosition(boardSquares[index]).top, getPosition(boardSquares[index]).left)
+            console.log('Faking player coordinates: ',player.style.top, player.style.left)
+
+            board.append(player)
+        })
+    </script>
+
+    
+    
+    <style>
+        .test-player-div {
+            width: 23.5px;
+            height: 23.5px;
+            background-color: blue;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            transition: left .5s ease-in, top .5s ease-in;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .board {
+            position: relative;
+        }
+        
+    </style>
 
 </body>
 </html>
