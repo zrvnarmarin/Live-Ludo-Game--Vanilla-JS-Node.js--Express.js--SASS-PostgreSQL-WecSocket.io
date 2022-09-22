@@ -27,8 +27,10 @@ Prototyped player movement with tracking current mouse position and handling dum
 
 22.9.2022
 - all player`s possible path waypoints done
-- player moves on the board squares in the interval of 2 seconds
+- player moves on the board squares in the interval of 2 seconds, but not in the predefined paths
+
+23.9.2022
 - yellow player, green player, red player and blue player path DEFINED!
 - dummy player now can move through previosly predefined path!
 
- TO DO: fix bug when player reaches final waypoint!
+ TO DO: fix bug when player reaches final waypoint; make utilitty class for moving any HTML element
