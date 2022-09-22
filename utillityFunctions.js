@@ -16,3 +16,14 @@ export const getTopAndLeftElementOriginPoint = (element) => {
         y: yPos
     };
 }
+
+// Get element position relative to the viewport
+export const getPosition = (element) => {
+    const {top, bottom, left, right} = element.getBoundingClientRect();
+    return {
+        left: left,
+        top: top,
+        bottom: bottom,
+        right: right
+    };
+}
