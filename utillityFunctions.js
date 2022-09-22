@@ -27,3 +27,10 @@ export const getElementPositionRelativeToTheViewport = (element) => {
         right: right
     };
 }
+
+// Output client`s mouse coordinates on console when clicked anywhere in the document`s body
+export const outputClientMouseCoordinates = () => {
+    document.body.addEventListener('click', (e) => {
+        console.log('Position X : ' + e.clientX + ' Position Y : ' + e.clientY)
+    })
+}
