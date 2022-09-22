@@ -130,6 +130,10 @@ body {
 
 /* Board squares */
 
+.board {
+    position: relative;
+}
+
 .board-squares {
     width: 150px;
     height: 300px;

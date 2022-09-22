@@ -147,7 +147,7 @@
 
     </div>
 
-    <script type="module" defer>
+    <script type="module" defer> 
         import {getElementOriginPoint, getElementPositionRelativeToTheViewport} from './utillityFunctions.js'
         
         const boardSquares = [...document.getElementsByClassName('board-square')]
@@ -156,24 +156,46 @@
         
         const wayPoints = []
         boardSquares.forEach((boardSquare, index) => {
-            const player = document.createElement('div')
-            player.classList.add('test-player-div')
+
+            // const player = document.createElement('div')
+            // player.classList.add('test-player-div')
 
             // Create a waypoint
             const waypoint = {
+                boardSquare: boardSquare,
+                wayPointIndex: index,
                 x: getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2,
                 y: getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2
             }
             wayPoints.push(waypoint)
 
             // Visualizing waypoint
-            player.style.top = getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2 + 'px'
-            player.style.left = getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2 + 'px'
-            player.style.backgroundColor = 'yellow'
+            // player.style.top = getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2 + 'px'
+            // player.style.left = getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2 + 'px'
+            // player.style.backgroundColor = 'yellow'
 
-            boardSquare.append(player)
+            // boardSquare.append(player)
         })
         console.log('waypoints: ', wayPoints)
+
+        // Movement
+        let index = -1
+
+        const testPlayer = document.createElement('div')
+        testPlayer.classList.add('test-player-div')
+
+         let interval = setInterval(() => {
+            index++
+            const { boardSquare, x, y } = wayPoints[index]
+            testPlayer.style.top = y + 'px'
+            testPlayer.style.left = x + 'px'
+            boardSquare.append(testPlayer)
+
+            console.log(boardSquare, y, x)
+            console.log(testPlayer.style.top, testPlayer.style.left)
+
+            
+        }, 2000)
 
     </script>
 
@@ -186,13 +208,10 @@
             background-color: blue;
             border: 1px solid black;
             border-radius: 50%;
-            position: absolute;
             left: 50px;
             top: 50px;
             transition: left .5s ease-in, top .5s ease-in;
-            display: flex;
-            justify-content: center;
-            align-content: center;
+            position: absolute;
         }
 
         .board {
