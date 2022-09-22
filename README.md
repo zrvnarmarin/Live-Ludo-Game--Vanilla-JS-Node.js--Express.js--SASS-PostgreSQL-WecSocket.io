@@ -30,3 +30,5 @@ Prototyped player movement with tracking current mouse position and handling dum
 - player moves on the board squares in the interval of 2 seconds
 - yellow player, green player, red player and blue player path DEFINED!
 - dummy player now can move through previosly predefined path!
+
+ TO DO: fix bug when player reaches final waypoint!

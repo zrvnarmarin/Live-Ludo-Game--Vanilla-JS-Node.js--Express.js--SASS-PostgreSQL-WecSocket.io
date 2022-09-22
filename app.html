@@ -176,6 +176,8 @@
 
             // boardSquare.append(player)
         })
+
+        // Logging all waypoint objects
         console.log('waypoints: ', wayPoints)
 
         // Displaying waypoint indexes on each board square
@@ -186,19 +188,61 @@
             boardSquare.append(index)
         })
 
-        // Determining yellow player path
+        // Determining all type of player`s path 
         const yellowPlayerPath = [
-        wayPoints[5], wayPoints[8], wayPoints[11], wayPoints[14], wayPoints[17],
-        wayPoints[36], wayPoints[37], wayPoints[38], wayPoints[39], wayPoints[40],
-        wayPoints[41], wayPoints[47], wayPoints[53], wayPoints[51], wayPoints[50],
-        wayPoints[49], wayPoints[48], wayPoints[56], wayPoints[59], wayPoints[62],
-        wayPoints[65], wayPoints[68], wayPoints[71], wayPoints[70], wayPoints[69],
-        wayPoints[63], wayPoints[60], wayPoints[57], wayPoints[54],
-        wayPoints[35], wayPoints[34], wayPoints[33], wayPoints[32], wayPoints[31],
-        wayPoints[30], wayPoints[24], wayPoints[18], wayPoints[20], wayPoints[21],
-        wayPoints[22], wayPoints[23], wayPoints[15], wayPoints[12], wayPoints[9],
-        wayPoints[6], wayPoints[3], wayPoints[0], wayPoints[1], wayPoints[4],
-        wayPoints[7], wayPoints[10], wayPoints[13], wayPoints[16]
+            wayPoints[5], wayPoints[8], wayPoints[11], wayPoints[14], wayPoints[17],
+            wayPoints[36], wayPoints[37], wayPoints[38], wayPoints[39], wayPoints[40],
+            wayPoints[41], wayPoints[47], wayPoints[53], wayPoints[51], wayPoints[50],
+            wayPoints[49], wayPoints[48], wayPoints[56], wayPoints[59], wayPoints[62],
+            wayPoints[65], wayPoints[68], wayPoints[71], wayPoints[70], wayPoints[69],
+            wayPoints[63], wayPoints[60], wayPoints[57], wayPoints[54],
+            wayPoints[35], wayPoints[34], wayPoints[33], wayPoints[32], wayPoints[31],
+            wayPoints[30], wayPoints[24], wayPoints[18], wayPoints[20], wayPoints[21],
+            wayPoints[22], wayPoints[23], wayPoints[15], wayPoints[12], wayPoints[9],
+            wayPoints[6], wayPoints[3], wayPoints[0], wayPoints[1], wayPoints[4],
+            wayPoints[7], wayPoints[10], wayPoints[13], wayPoints[16]
+        ]
+
+        const greenPlayerPath = [
+            wayPoints[52], wayPoints[51], wayPoints[50], wayPoints[49], wayPoints[48],
+            wayPoints[56], wayPoints[59], wayPoints[62], wayPoints[65], wayPoints[68],
+            wayPoints[71], wayPoints[70], wayPoints[69], wayPoints[63], wayPoints[60],
+            wayPoints[57], wayPoints[54], wayPoints[35], wayPoints[34], wayPoints[33],
+            wayPoints[32], wayPoints[31], wayPoints[30], wayPoints[24], wayPoints[18],
+            wayPoints[20], wayPoints[21], wayPoints[22], wayPoints[23],
+            wayPoints[15], wayPoints[12], wayPoints[9], wayPoints[6], wayPoints[3],
+            wayPoints[0], wayPoints[1], wayPoints[2], wayPoints[8], wayPoints[11],
+            wayPoints[14], wayPoints[17], wayPoints[36], wayPoints[37], wayPoints[38],
+            wayPoints[39], wayPoints[40], wayPoints[41], wayPoints[47], wayPoints[46],
+            wayPoints[45], wayPoints[44], wayPoints[43], wayPoints[42]
+        ]
+
+        const redPlayerPath = [
+            wayPoints[66], wayPoints[63], wayPoints[60], wayPoints[57], wayPoints[54],
+            wayPoints[35], wayPoints[34], wayPoints[33], wayPoints[32], wayPoints[31],
+            wayPoints[30], wayPoints[24], wayPoints[18], wayPoints[20], wayPoints[21],
+            wayPoints[22], wayPoints[23], wayPoints[15], wayPoints[12], wayPoints[9],
+            wayPoints[6], wayPoints[3], wayPoints[0], wayPoints[1], wayPoints[2],
+            wayPoints[8], wayPoints[11], wayPoints[14], wayPoints[17],
+            wayPoints[36], wayPoints[37], wayPoints[38], wayPoints[39], wayPoints[40],
+            wayPoints[41], wayPoints[47], wayPoints[53], wayPoints[51], wayPoints[50],
+            wayPoints[49], wayPoints[48], wayPoints[56], wayPoints[59], wayPoints[62],
+            wayPoints[65], wayPoints[68], wayPoints[71], wayPoints[70], wayPoints[67],
+            wayPoints[64], wayPoints[61], wayPoints[58], wayPoints[55]
+        ]
+
+        const bluePlayerPath = [
+            wayPoints[19], wayPoints[20], wayPoints[21], wayPoints[22], wayPoints[23],
+            wayPoints[15], wayPoints[12], wayPoints[9], wayPoints[6], wayPoints[3],
+            wayPoints[0], wayPoints[1], wayPoints[2], wayPoints[8],
+            wayPoints[11], wayPoints[14], wayPoints[17], wayPoints[36], wayPoints[37],
+            wayPoints[38], wayPoints[39], wayPoints[40], wayPoints[41], wayPoints[47],
+            wayPoints[53], wayPoints[51], wayPoints[50], wayPoints[49],
+            wayPoints[48], wayPoints[56], wayPoints[59], wayPoints[62], wayPoints[65],
+            wayPoints[68], wayPoints[71], wayPoints[70], wayPoints[69], wayPoints[63],
+            wayPoints[60], wayPoints[57], wayPoints[54], wayPoints[35], wayPoints[34],
+            wayPoints[33], wayPoints[32], wayPoints[31], wayPoints[30], wayPoints[24],
+            wayPoints[25], wayPoints[26], wayPoints[27], wayPoints[28], wayPoints[29]
         ]
 
         // Movement
@@ -209,7 +253,7 @@
 
         let interval = setInterval(() => {
             index++
-            const { boardSquare, x, y } = yellowPlayerPath[index]
+            const { boardSquare, x, y } = bluePlayerPath[index]
             testPlayer.style.top = y + 'px'
             testPlayer.style.left = x + 'px'
             boardSquare.append(testPlayer)
