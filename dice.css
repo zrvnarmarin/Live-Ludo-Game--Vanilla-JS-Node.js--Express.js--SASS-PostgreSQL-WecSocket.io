@@ -22,7 +22,7 @@ body {
     transform-style: preserve-3d;
     /* perspective: 700px; OVO ISTRAZITI JOŠ!! */
     perspective-origin: 40% 40%;
-    animation: rotate 5s linear infinite;
+    /* animation: roundandround .8s infinite linear forwards;  */
     margin-top: 400px;
 }
 
@@ -181,11 +181,20 @@ body {
 /* Dice animation */
 /* For rotating the cube on X axis, just change to rotateX in from and to part */
 
-@keyframes rotate {
-    from {
-      transform: rotateY(0) rotateX(45deg) rotateZ(45deg);
+  @keyframes rotate {
+    0% {
+  transform: rotateZ(25deg) rotateX(20deg) rotateY(0deg);
     }
+    50% {
+  transform: rotateZ(-25deg) rotateX(-20deg) rotateY(180deg);
+    }
+    100% {
+  transform: rotateZ(25deg) rotateX(20deg) rotateY(360deg);
+    }
+  }
+
+  @keyframes roundandround {
     to {
-      transform: rotateY(360deg) rotateX(45deg) rotateZ(45deg);
+      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
     }
   }
