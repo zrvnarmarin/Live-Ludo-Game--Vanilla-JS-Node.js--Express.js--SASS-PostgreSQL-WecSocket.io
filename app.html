@@ -162,10 +162,10 @@
                 boardSquare: boardSquare,
                 wayPointIndex: wayPointIndexes[index],
                 classList: boardSquare.className.split(' '),
-                x: getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2,
-                y: getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2,
                 isHomeBoardSquare: boardSquare.className.includes('home-board-square'),
                 isPlayerStartingPoint: boardSquare.className.includes('starting-board-square'),
+                x: getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2,
+                y: getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2
                 // isOccupiedByPlayers: null,
             }
             
@@ -239,10 +239,6 @@
             wayPoints[33], wayPoints[32], wayPoints[31], wayPoints[30], wayPoints[24],
             wayPoints[25], wayPoints[26], wayPoints[27], wayPoints[28], wayPoints[29]
         ]
-
-        bluePlayerPath.forEach(waypoint => {
-            console.log(waypoint)
-        })
 
         // Movement
         let index = -1
