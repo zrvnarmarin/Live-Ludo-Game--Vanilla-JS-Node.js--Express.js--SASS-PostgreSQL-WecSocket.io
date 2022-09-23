@@ -32,5 +32,5 @@ Prototyped player movement with tracking current mouse position and handling dum
 23.9.2022
 - yellow player, green player, red player and blue player path DEFINED!
 - dummy player now can move through previosly predefined path!
-
- TO DO: fix bug when player reaches final waypoint; make utilitty class for moving any HTML element; extend board square object
+- dice animation modified
+- waypoint entity extended with new properties
