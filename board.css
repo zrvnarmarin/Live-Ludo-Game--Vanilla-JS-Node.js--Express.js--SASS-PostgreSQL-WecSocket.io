@@ -25,13 +25,17 @@ body {
     background-color: var(--clr-blue);
 }
 
-.blue-player-board-square {
+.blue-home-board-square {
     background-color: var(--clr-blue);
 }
 
 .blue-arrow {
     color: var(--clr-blue); 
     font-size: 40px;
+}
+
+.blue-starting-board-square {
+    background-color: var(--clr-blue);
 }
 
 .yellow-player-start-area-wrapper {
@@ -42,13 +46,17 @@ body {
     background-color: var(--clr-yellow);
 }
 
-.yellow-player-board-square {
+.yellow-home-board-square {
     background-color: var(--clr-yellow);
 }
 
 .yellow-arrow {
     color: var(--clr-yellow); 
     font-size: 40px;
+}
+
+.yellow-starting-board-square {
+    background-color: var(--clr-yellow);
 }
 
 .green-player-start-area-wrapper {
@@ -59,13 +67,17 @@ body {
     background-color: var(--clr-green);
 }
 
-.green-player-board-square {
+.green-home-board-square {
     background-color: var(--clr-green);
 }
 
 .green-arrow {
     color: var(--clr-green); 
     font-size: 40px;
+}
+
+.green-starting-board-square {
+    background-color: var(--clr-green);
 }
 
 .red-player-start-area-wrapper {
@@ -76,13 +88,17 @@ body {
     background-color: var(--clr-red);
 }
 
-.red-player-board-square {
+.red-home-board-square {
     background-color: var(--clr-red);
 }
 
 .red-arrow {
     color: var(--clr-red); 
     font-size: 40px;
+}
+
+.red-starting-board-square {
+    background-color: var(--clr-red);
 }
 
 .board-square-arrow-holder {

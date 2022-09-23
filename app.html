@@ -29,19 +29,19 @@
                 </div>
                 <div class="board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square yellow-player-board-square"></div>
-                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square yellow-home-board-square"></div>
+                <div class="board-square yellow-starting-board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square yellow-player-board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square yellow-home-board-square"></div>
                 <div class="board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square yellow-home-board-square"></div>
                 <div class="board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square yellow-player-board-square"></div>
+                <div class="board-square yellow-home-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square yellow-home-board-square"></div>
                 <div class="board-square"></div>
             </div>
             <div class="start-area-wrapper yellow-player-start-area-wrapper">
@@ -58,7 +58,7 @@
         <div class="second-row">
         <div class="board-squares-rotated">
             <div class="board-square"></div>
-            <div class="board-square blue-player-board-square"></div>
+            <div class="board-square blue-starting-board-square"></div>
             <div class="board-square"></div>
             <div class="board-square"></div>
             <div class="board-square"></div>
@@ -66,11 +66,11 @@
             <div class="board-square board-square-arrow-holder">
                 <i class="fa-sharp fa-solid fa-arrow-right blue-arrow"></i>
             </div>
-            <div class="board-square blue-player-board-square"></div>
-            <div class="board-square blue-player-board-square"></div>
-            <div class="board-square blue-player-board-square"></div>
-            <div class="board-square blue-player-board-square"></div>
-            <div class="board-square blue-player-board-square"></div>
+            <div class="board-square blue-home-board-square"></div>
+            <div class="board-square blue-home-board-square"></div>
+            <div class="board-square blue-home-board-square"></div>
+            <div class="board-square blue-home-board-square"></div>
+            <div class="board-square blue-home-board-square"></div>
             <div class="board-square"></div>
             <div class="board-square"></div>
             <div class="board-square"></div>
@@ -86,11 +86,11 @@
             <div class="board-square"></div>
             <div class="board-square"></div>
             <div class="board-square"></div>
-            <div class="board-square green-player-board-square"></div>
-            <div class="board-square green-player-board-square"></div>
-            <div class="board-square green-player-board-square"></div>
-            <div class="board-square green-player-board-square"></div>
-            <div class="board-square green-player-board-square"></div>
+            <div class="board-square green-home-board-square"></div>
+            <div class="board-square green-home-board-square"></div>
+            <div class="board-square green-home-board-square"></div>
+            <div class="board-square green-home-board-square"></div>
+            <div class="board-square green-home-board-square"></div>
             <div class="board-square board-square-arrow-holder">
                 <i class="fa-sharp fa-solid fa-arrow-left green-arrow"></i>
             </div>
@@ -98,7 +98,7 @@
             <div class="board-square"></div>
             <div class="board-square"></div>
             <div class="board-square"></div>
-            <div class="board-square green-player-board-square"></div>
+            <div class="board-square green-starting-board-square"></div>
             <div class="board-square"></div>
         </div>
         </div>
@@ -115,19 +115,19 @@
             </div>
             <div class="board-squares">
                 <div class="board-square"></div>
-                <div class="board-square red-player-board-square"></div>
+                <div class="board-square red-home-board-square"></div>
                 <div class="board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square red-player-board-square"></div>
+                <div class="board-square red-home-board-square"></div>
                 <div class="board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square red-player-board-square"></div>
+                <div class="board-square red-home-board-square"></div>
                 <div class="board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square red-player-board-square"></div>
+                <div class="board-square red-home-board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square red-player-board-square"></div>
-                <div class="board-square red-player-board-square"></div>
+                <div class="board-square red-starting-board-square"></div>
+                <div class="board-square red-home-board-square"></div>
                 <div class="board-square"></div>
                 <div class="board-square"></div>
                 <div class="board-square board-square-arrow-holder">
@@ -159,25 +159,26 @@
             const waypoint = {
                 boardSquare: boardSquare,
                 wayPointIndex: index,
+                classList: boardSquare.className.split(' '),
                 x: getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2,
                 y: getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2,
-                nextBoardSquare: boardSquares[index + 1],
-                nextWayPointIndex: index += 1
+                isOccupiedByPlayers: null,
+                isHomeBoardSquare: boardSquare.className.includes('home-board-square'),
+                isPlayerStartingPoint: boardSquare.className.includes('starting-board-square'),
             }
+            
             wayPoints.push(waypoint)
 
+            console.log(waypoint)
         })
-
-        // Logging all waypoint objects
-        console.log('waypoints: ', wayPoints)
 
         // Displaying waypoint indexes on each board square
         wayPoints.forEach(waypoint => {
             const {boardSquare, wayPointIndex, nextBoardSquare, nextWayPointIndex} = waypoint
             const index = document.createElement('p')
             index.innerText = wayPointIndex
+            
             boardSquare.append(index)
-            console.log(boardSquare, wayPointIndex)
         })
 
         // Determining all type of player`s path 
@@ -250,8 +251,8 @@
             testPlayer.style.left = x + 'px'
             boardSquare.append(testPlayer)
 
-            console.log(boardSquare, y, x)
-            console.log(testPlayer.style.top, testPlayer.style.left)
+            // console.log(boardSquare, y, x)
+            // console.log(testPlayer.style.top, testPlayer.style.left)
 
         }, 150)
 
