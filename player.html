@@ -37,7 +37,7 @@
     </style>
     
     <script type="module">
-        import {getElementOriginPoint} from './utillityFunctions.js'
+        import {getElementOriginPoint, getTopAndLeftElementOriginPoint} from './utillityFunctions.js'
 
         let testPlayer = document.querySelector("#test-player");
         let contentContainer = document.querySelector("#contentContainer");
@@ -45,7 +45,7 @@
         contentContainer.addEventListener("click", moveElementToMouseCoordinates);
         
         function moveElementToMouseCoordinates(e) {
-            let parentPosition = getTopAndLeftElementOriginPosition(e.currentTarget);
+            let parentPosition = getTopAndLeftElementOriginPoint(e.currentTarget);
 
             let xPosition = e.clientX - parentPosition.x - (getElementOriginPoint(testPlayer).x);
             let yPosition = e.clientY - parentPosition.y - (getElementOriginPoint(testPlayer).y);
@@ -57,17 +57,6 @@
             testPlayer.style.left = xPosition + "px";
             testPlayer.style.top = yPosition + "px";
         }
-        
-        function getTopAndLeftElementOriginPosition(element) {
-            let xPos  = (element.offsetLeft - element.scrollLeft + element.clientLeft);
-            let yPos  = (element.offsetTop - element.scrollTop + element.clientTop);
-
-            return {
-                x: xPos,
-                y: yPos
-            };
-        }
-
 
     </script>
 
