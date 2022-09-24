@@ -36,6 +36,6 @@ export const outputClientMouseCoordinates = () => {
 }
 
 // Finding random integer between two intervals, including minimal and maximum value
-function getRandomIntFromIntervač(min, max) { 
+export const getRandomIntFromIntervals = (min, max) => { 
     return Math.floor(Math.random() * (max - min + 1) + min)
-  }
+}
