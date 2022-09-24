@@ -34,3 +34,7 @@ Prototyped player movement with tracking current mouse position and handling dum
 - dummy player now can move through previosly predefined path!
 - dice animation modified
 - waypoint entity extended with new properties
+
+24.9.2022
+- making utillity function for dice numbers
+- updating dice.css for dice animation
