@@ -14,7 +14,6 @@ body {
 
 /* Dice general classes */
 
-/* Remove dice width and height in the future! */
 .dice {
     position: relative;
     width: 150px;
@@ -24,10 +23,6 @@ body {
     perspective-origin: 40% 40%;
     margin-top: 400px;
     transition: transform .3s;
-}
-
-.rotate-dice {
-    animation: roundandround .1s infinite linear forwards; 
 }
 
 .dice-side {
@@ -44,6 +39,10 @@ body {
     border: 1px solid var(--clr-dice-number-ring-border);
     border-radius: 50%;
     background-color: var(--clr-dice-number-ring);
+}
+
+.rotate-dice {
+    animation: roundandround .1s infinite linear forwards; 
 }
 
 /* Side one */
@@ -183,22 +182,9 @@ body {
 }
 
 /* Dice animation */
-/* For rotating the cube on X axis, just change to rotateX in from and to part */
 
-  @keyframes rotate {
-    0% {
-  transform: rotateZ(25deg) rotateX(20deg) rotateY(0deg);
-    }
-    50% {
-  transform: rotateZ(-25deg) rotateX(-20deg) rotateY(180deg);
-    }
-    100% {
-  transform: rotateZ(25deg) rotateX(20deg) rotateY(360deg);
-    }
-  }
-
-  @keyframes roundandround {
+@keyframes roundandround {
     to {
-      transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
     }
-  }
+}
