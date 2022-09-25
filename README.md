@@ -38,3 +38,6 @@ Prototyped player movement with tracking current mouse position and handling dum
 24.9.2022
 - making utillity function for dice numbers
 - displaying each dice side when random number is gotten
+
+25.9.2022
+- dice now shows right side according to value of random number
