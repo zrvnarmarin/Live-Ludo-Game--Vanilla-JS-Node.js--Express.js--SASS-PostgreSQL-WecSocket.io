@@ -22,8 +22,12 @@ body {
     transform-style: preserve-3d;
     /* perspective: 700px; OVO ISTRAZITI JOŠ!! */
     perspective-origin: 40% 40%;
-    /* animation: roundandround .8s infinite linear forwards;  */
     margin-top: 400px;
+    transition: transform .3s;
+}
+
+.rotate-dice {
+    animation: roundandround .1s infinite linear forwards; 
 }
 
 .dice-side {

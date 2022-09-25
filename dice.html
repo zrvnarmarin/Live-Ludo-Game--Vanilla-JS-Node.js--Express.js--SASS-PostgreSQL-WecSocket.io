@@ -73,50 +73,37 @@
         const dice = document.querySelector('.dice')
         const diceRollButton = document.querySelector('.dice-number-button')
 
-        // // Displaying number 4
-        // dice.style.transform = 'rotateY(90deg)'
-
-        // // Dysplaing number 2
-        // dice.style.transform = 'rotateY(180deg)'
-
-        // // Dysplaing number 3
-        // dice.style.transform = 'rotateY(270deg)'
-
-        // // Dysplaing number 1 (or 0deg)
-        // dice.style.transform = 'rotateY(360deg)'
-
-        // // displaying number 6
-        // dice.style.transform = 'rotateX(90deg)'
-
-        // // displaying number 5
-        // dice.style.transform = 'rotateX(270deg)'
-
-        
+        // Dice rotating to show side that contains exact generated random number
         diceRollButton.addEventListener('click', () => {
             const randomNumber = getRandomIntFromIntervals(1, 6).toString()
             console.log(randomNumber)
+
+            // Trigger animation on button click
+            dice.classList.add('rotate-dice')
+
+            // Remove dice rotation animation after 1 second
+            setTimeout(() => {
+                dice.classList.remove('rotate-dice')
+            }, 1000)
+
+            // Display generated random dice side --> TO DO: clean this up later
 
             if (randomNumber === '1') {
                 dice.style.transform = 'rotateY(360deg)'
             } 
             else if (randomNumber === '2') {
-                dice.style.transform = 'rotateY(270deg)'
-                dice.style.transform = 'rotateY(180deg)'
+                dice.style.transform = 'rotateX(180deg)'
             } 
             else if (randomNumber === '3') {
                 dice.style.transform = 'rotateY(270deg)'
-                dice.style.transform = 'rotateY(270deg)'
             } 
             else if (randomNumber === '4') {
-                dice.style.transform = 'rotateY(270deg)'
                 dice.style.transform = 'rotateY(90deg)'
             } 
             else if (randomNumber === '5') {
-                dice.style.transform = 'rotateY(270deg)'
                 dice.style.transform = 'rotateX(270deg)'
             } 
             else if (randomNumber === '6') {
-                dice.style.transform = 'rotateY(270deg)'
                 dice.style.transform = 'rotateX(90deg)'
             }
         })
