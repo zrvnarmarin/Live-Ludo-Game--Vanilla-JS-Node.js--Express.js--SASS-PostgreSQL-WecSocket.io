@@ -288,6 +288,19 @@
 
         console.log(redPlayerStartAreaRings)
 
+        // Test instantiating
+        const testPlayer = document.createElement('div')
+        testPlayer.classList.add('test-player-div')
+
+        setInterval(() => {
+            index++
+            const { boardSquare, x, y } = bluePlayerPath[index]
+            testPlayer.style.top = y + 'px'
+            testPlayer.style.left = x + 'px'
+            boardSquare.append(testPlayer)
+
+        }, 1500)
+
 
         // Functions
         function getPlayerHomeRingColor(playerHomeRing) {
