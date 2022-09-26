@@ -278,8 +278,33 @@
             // console.log(playerStartRing)
         })
 
-        console.log(startAreaPlayerRingsCenters)
+        // console.log(startAreaPlayerRingsCenters)
 
+        const bluePlayerStartAreaRings = [
+            startAreaPlayerRingsCenters[0], startAreaPlayerRingsCenters[1], 
+            startAreaPlayerRingsCenters[2], startAreaPlayerRingsCenters[3]
+        ]
+
+        const yellowPlayerStartAreaRings = [
+            startAreaPlayerRingsCenters[4], startAreaPlayerRingsCenters[5], 
+            startAreaPlayerRingsCenters[6], startAreaPlayerRingsCenters[7]
+        ]
+
+        const redPlayerStartAreaRings = [
+            startAreaPlayerRingsCenters[8], startAreaPlayerRingsCenters[9], 
+            startAreaPlayerRingsCenters[10], startAreaPlayerRingsCenters[11]
+        ]
+
+        const greenPlayerStartAreaRings = [
+            startAreaPlayerRingsCenters[12], startAreaPlayerRingsCenters[13], 
+            startAreaPlayerRingsCenters[14], startAreaPlayerRingsCenters[15]
+        ]
+
+        console.log(bluePlayerStartAreaRings)
+
+
+
+        // Functions
         function getPlayerHomeRingColor(playerHomeRing) {
             if (playerHomeRing.className.includes('green-player-start-area-player-ring')) {
                 return 'green'
