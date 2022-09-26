@@ -150,10 +150,16 @@
     <script type="module" defer> 
         import {getElementOriginPoint, getElementPositionRelativeToTheViewport} from './utillityFunctions.js'
         
+        // Player paths
         const boardSquares = [...document.getElementsByClassName('board-square')]
         const wayPoints = []
         const wayPointIndexes = []
 
+        // Player homeboards
+        const startAreaPlayerRings = document.getElementsByClassName('start-area-player-ring')
+        const startAreaPlayerRingsCenters = []
+
+        // Creating path waypoints
         boardSquares.forEach((boardSquare, index) => {
 
             wayPointIndexes.push(index)
@@ -171,12 +177,12 @@
             
             wayPoints.push(waypoint)
 
-            // console.log(waypoint)
+            // console.log(waypoint.wayPointIndex)
         })
 
         // Displaying waypoint indexes on each board square
         wayPoints.forEach(waypoint => {
-            const {boardSquare, wayPointIndex, nextBoardSquare, nextWayPointIndex} = waypoint
+            const {boardSquare, wayPointIndex} = waypoint
             const index = document.createElement('p')
             index.innerText = wayPointIndex
             
@@ -246,17 +252,19 @@
         const testPlayer = document.createElement('div')
         testPlayer.classList.add('test-player-div')
 
-        let interval = setInterval(() => {
+        setInterval(() => {
             index++
             const { boardSquare, x, y } = bluePlayerPath[index]
             testPlayer.style.top = y + 'px'
             testPlayer.style.left = x + 'px'
             boardSquare.append(testPlayer)
 
-            // console.log(boardSquare, y, x)
-            // console.log(testPlayer.style.top, testPlayer.style.left)
+        }, 1500)
 
-        }, 150)
+        // Start area stuff
+        startAreaPlayerRings.forEach(playerRing => {
+            
+        })
 
     </script>
     
