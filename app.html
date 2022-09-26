@@ -140,7 +140,7 @@
                     <div class="start-area-player-ring green-player-start-area-player-ring"></div>
                     <div class="start-area-player-ring green-player-start-area-player-ring"></div>
                     <div class="start-area-player-ring green-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring green-player-start-area-player-ring"><p>marineee</p></div>
+                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
                 </div>
             </div>
         </div>
@@ -246,7 +246,7 @@
             wayPoints[25], wayPoints[26], wayPoints[27], wayPoints[28], wayPoints[29]
         ]
 
-        // Movement
+        // Test Movement
         let index = -1
 
         const testPlayer = document.createElement('div')
@@ -263,21 +263,22 @@
 
         // Start area stuff
         startAreaPlayerRings.forEach((playerRing, index) => {
+
             const playerStartRing = {
                 playerRing: playerRing,
                 classList: playerRing.className.split(' '),
                 color: getPlayerHomeRingColor(playerRing),
                 x: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).left + getElementOriginPoint(startAreaPlayerRings[index]).x,
                 y: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).top + getElementOriginPoint(startAreaPlayerRings[index]).y,
-                isPlayerOnRing: playerRing.hasChildNodes()
+                isPlayerOnRing: playerRing.hasChildNodes(),
             }
-            // wayPointIndex: wayPointIndexes[index],
-            // isHomeBoardSquare: boardSquare.className.includes('home-board-square'),
 
-            console.log(playerStartRing)
+            startAreaPlayerRingsCenters.push(playerStartRing)
+
+            // console.log(playerStartRing)
         })
 
-        outputClientMouseCoordinates()
+        console.log(startAreaPlayerRingsCenters)
 
         function getPlayerHomeRingColor(playerHomeRing) {
             if (playerHomeRing.className.includes('green-player-start-area-player-ring')) {
@@ -293,9 +294,10 @@
                 return 'red'
             }
         }
-
     </script>
     
+
+
     
     <style>
         .test-player-div {
