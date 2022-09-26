@@ -150,12 +150,12 @@
     <script type="module" defer> 
         import {getElementOriginPoint, getElementPositionRelativeToTheViewport, outputClientMouseCoordinates} from './utillityFunctions.js'
         
-        // Player paths
+        // Player paths selectors
         const boardSquares = [...document.getElementsByClassName('board-square')]
         const wayPoints = []
         const wayPointIndexes = []
 
-        // Player homeboards
+        // Player homeboards selectors
         const startAreaPlayerRings = [...document.getElementsByClassName('start-area-player-ring')]
         const startAreaPlayerRingsCenters = []
 
@@ -163,7 +163,7 @@
         boardSquares.forEach((boardSquare, index) => {
 
             wayPointIndexes.push(index)
-            // Create a waypoint
+
             const waypoint = {
                 boardSquare: boardSquare,
                 wayPointIndex: wayPointIndexes[index],
@@ -176,17 +176,6 @@
             }
             
             wayPoints.push(waypoint)
-
-            // console.log(waypoint.wayPointIndex)
-        })
-
-        // Displaying waypoint indexes on each board square
-        wayPoints.forEach(waypoint => {
-            const {boardSquare, wayPointIndex} = waypoint
-            const index = document.createElement('p')
-            index.innerText = wayPointIndex
-            
-            boardSquare.append(index)
         })
 
         // Determining all type of player`s path 
@@ -261,7 +250,7 @@
 
         }, 1500)
 
-        // Start area stuff
+        // Creating starting areas for each group of players
         startAreaPlayerRings.forEach((playerRing, index) => {
 
             const playerStartRing = {
@@ -276,8 +265,7 @@
             startAreaPlayerRingsCenters.push(playerStartRing)
         })
 
-        // console.log(startAreaPlayerRingsCenters)
-
+        // Determining all type of player`s startin areas
         const bluePlayerStartAreaRings = [
             startAreaPlayerRingsCenters[0], startAreaPlayerRingsCenters[1], 
             startAreaPlayerRingsCenters[2], startAreaPlayerRingsCenters[3]
@@ -300,6 +288,7 @@
 
         console.log(redPlayerStartAreaRings)
 
+
         // Functions
         function getPlayerHomeRingColor(playerHomeRing) {
             if (playerHomeRing.className.includes('green-player-start-area-player-ring')) {
@@ -315,6 +304,14 @@
                 return 'red'
             }
         }
+
+        wayPoints.forEach(waypoint => {
+            const {boardSquare, wayPointIndex} = waypoint
+            const index = document.createElement('p')
+            index.innerText = wayPointIndex
+            
+            boardSquare.append(index)
+        })
     </script>
     
 
