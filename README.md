@@ -42,3 +42,8 @@ Prototyped player movement with tracking current mouse position and handling dum
 25.9.2022
 - dice now shows right side according to value of random number
 - dice animation FULLY FINISHED! Dice now rotates for 1 second than stops and shows random generated number side
+
+
+26.9.2022
+- all player`s starting positions DEFINED!
+- major code cleanup for better readability
