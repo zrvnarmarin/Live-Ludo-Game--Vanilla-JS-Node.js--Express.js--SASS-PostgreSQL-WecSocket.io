@@ -140,7 +140,7 @@
                     <div class="start-area-player-ring green-player-start-area-player-ring"></div>
                     <div class="start-area-player-ring green-player-start-area-player-ring"></div>
                     <div class="start-area-player-ring green-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
+                    <div class="start-area-player-ring green-player-start-area-player-ring"><p>marineee</p></div>
                 </div>
             </div>
         </div>
@@ -148,7 +148,7 @@
     </div>
 
     <script type="module" defer> 
-        import {getElementOriginPoint, getElementPositionRelativeToTheViewport} from './utillityFunctions.js'
+        import {getElementOriginPoint, getElementPositionRelativeToTheViewport, outputClientMouseCoordinates} from './utillityFunctions.js'
         
         // Player paths
         const boardSquares = [...document.getElementsByClassName('board-square')]
@@ -156,7 +156,7 @@
         const wayPointIndexes = []
 
         // Player homeboards
-        const startAreaPlayerRings = document.getElementsByClassName('start-area-player-ring')
+        const startAreaPlayerRings = [...document.getElementsByClassName('start-area-player-ring')]
         const startAreaPlayerRingsCenters = []
 
         // Creating path waypoints
@@ -262,9 +262,37 @@
         }, 1500)
 
         // Start area stuff
-        startAreaPlayerRings.forEach(playerRing => {
-            
+        startAreaPlayerRings.forEach((playerRing, index) => {
+            const playerStartRing = {
+                playerRing: playerRing,
+                classList: playerRing.className.split(' '),
+                color: getPlayerHomeRingColor(playerRing),
+                x: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).left + getElementOriginPoint(startAreaPlayerRings[index]).x,
+                y: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).top + getElementOriginPoint(startAreaPlayerRings[index]).y,
+                isPlayerOnRing: playerRing.hasChildNodes()
+            }
+            // wayPointIndex: wayPointIndexes[index],
+            // isHomeBoardSquare: boardSquare.className.includes('home-board-square'),
+
+            console.log(playerStartRing)
         })
+
+        outputClientMouseCoordinates()
+
+        function getPlayerHomeRingColor(playerHomeRing) {
+            if (playerHomeRing.className.includes('green-player-start-area-player-ring')) {
+                return 'green'
+            }
+            else if (playerHomeRing.className.includes('blue-player-start-area-player-ring')) {
+                return 'blue'
+            }
+            else if (playerHomeRing.className.includes('yellow-player-start-area-player-ring')) {
+                return 'yellow'
+            }
+            else if (playerHomeRing.className.includes('red-player-start-area-player-ring')) {
+                return 'red'
+            }
+        }
 
     </script>
     
