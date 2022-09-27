@@ -25,11 +25,7 @@ function rotateDiceSide(randomNumber) {
     }
 }
 
-// Dice rotating to show side that contains exact generated random number
-diceRollButton.addEventListener('click', () => {
-    const diceNumber = getRandomIntFromIntervals(1, 6).toString()
-    console.log(diceNumber)
-
+function triggerDiceAnimation() {
     // Trigger animation on button click
     dice.classList.add('rotate-dice')
 
@@ -37,7 +33,17 @@ diceRollButton.addEventListener('click', () => {
     setTimeout(() => {
         dice.classList.remove('rotate-dice')
     }, 1000)
+}
 
+function rotateDice() {
+    const diceNumber = getRandomIntFromIntervals(1, 6).toString()
+    console.log(diceNumber)
+
+    triggerDiceAnimation()
     rotateDiceSide(diceNumber)
 
-})
+    return diceNumber
+}
+
+// Dice rotating on button click to show side that contains exact generated random number
+diceRollButton.addEventListener('click', rotateDice)
