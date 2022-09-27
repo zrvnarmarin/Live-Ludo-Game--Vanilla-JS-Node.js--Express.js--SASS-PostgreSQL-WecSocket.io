@@ -145,6 +145,14 @@
             </div>
         </div>
 
+        <div id="parent" class="parent">
+            <div class="nesto">ndshgn</div>
+            <div class="ghdn">dghngh</div>
+            <div class="ndgf">dghngh</div>
+            <div class="nesto">dghngh</div>
+            <div class="nesto">dghngh</div>
+        </div>
+
     </div>
 
     <script type="module" defer> 
@@ -171,11 +179,23 @@
                 isHomeBoardSquare: boardSquare.className.includes('home-board-square'),
                 isPlayerStartingPoint: boardSquare.className.includes('starting-board-square'),
                 x: getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2,
-                y: getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2
-                // isOccupiedByPlayers: null,
+                y: getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2,
+                currentPlayersOccupying: getChildrenWithSpecificClass(boardSquare, 'test-player-div')
             }
             
             wayPoints.push(waypoint)
+        })
+
+        // console.log(wayPoints)
+        wayPoints.forEach(waypoint => {
+            const {boardSquare, x, y} = waypoint
+            const test = document.createElement('div')
+            test.classList.add('test-player-div')
+
+            test.style.top = y + 'px'
+            test.style.left = x + 'px'
+            boardSquare.append(test)
+
         })
 
         // Determining all type of player`s path 
@@ -256,9 +276,9 @@
             const playerStartRing = {
                 playerRing: playerRing,
                 classList: playerRing.className.split(' '),
-                color: getPlayerHomeRingColor(playerRing),
-                x: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).left + getElementOriginPoint(startAreaPlayerRings[index]).x,
-                y: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).top + getElementOriginPoint(startAreaPlayerRings[index]).y,
+                color: getPlayerStartAreaRingColor(playerRing),
+                x: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).left + getElementOriginPoint(startAreaPlayerRings[index]).x / 1.9,
+                y: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).top + getElementOriginPoint(startAreaPlayerRings[index]).y / 1.9,
                 isPlayerOnRing: playerRing.hasChildNodes(),
             }
 
@@ -286,24 +306,27 @@
             startAreaPlayerRingsCenters[14], startAreaPlayerRingsCenters[15]
         ]
 
-        console.log(redPlayerStartAreaRings)
-
         // Test instantiating
-        const testPlayer = document.createElement('div')
-        testPlayer.classList.add('test-player-div')
+        
+        let indexTwo = -1
 
         setInterval(() => {
-            index++
-            const { boardSquare, x, y } = bluePlayerPath[index]
-            testPlayer.style.top = y + 'px'
-            testPlayer.style.left = x + 'px'
-            boardSquare.append(testPlayer)
+            const testPlayerTwo = document.createElement('div')
+            testPlayerTwo.classList.add('test-player-div')
 
-        }, 1500)
+            indexTwo++
+            const { playerRing, x, y, isPlayerOnRing } = bluePlayerStartAreaRings[indexTwo]
+
+            testPlayerTwo.style.top = y + 'px'
+            testPlayerTwo.style.left = x + 'px'
+
+            playerRing.append(testPlayerTwo)
+
+        }, 15000)
 
 
         // Functions
-        function getPlayerHomeRingColor(playerHomeRing) {
+        function getPlayerStartAreaRingColor(playerHomeRing) {
             if (playerHomeRing.className.includes('green-player-start-area-player-ring')) {
                 return 'green'
             }
@@ -318,13 +341,23 @@
             }
         }
 
-        wayPoints.forEach(waypoint => {
-            const {boardSquare, wayPointIndex} = waypoint
-            const index = document.createElement('p')
-            index.innerText = wayPointIndex
-            
-            boardSquare.append(index)
-        })
+
+        const parent = document.getElementById('parent')
+
+        function getChildrenWithSpecificClass(parentElement, className) {
+            let parentElementChildren = [...parentElement.children]
+            const test = []
+            parentElementChildren.forEach(child => {
+                if (child.className === className) {
+                    test.push(child)
+                    console.log(child.className, className)
+                }
+            })
+            console.log(test)
+
+            return test
+        }
+
     </script>
     
 

@@ -39,3 +39,17 @@ export const outputClientMouseCoordinates = () => {
 export const getRandomIntFromIntervals = (min, max) => { 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+// Get array of all children elements with specified class
+export const getChildrenWithSpecificClass = (parentElement, className) => {
+    let childrenElements = [...parentElement.children]
+    const childrenWithSpecificClass = []
+
+    childrenElements.forEach(child => {
+        if (child.className === className) {
+            childrenWithSpecificClass.push(child)
+        }
+    })
+
+    return childrenWithSpecificClass
+}
