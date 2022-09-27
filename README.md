@@ -58,5 +58,4 @@ Prototyped player movement with tracking current mouse position and handling dum
 - added general application UI styling script
 
 BUGS to fix: 
-a) generated dice number shown after the player clicks 'Rool Dice' button --> it should be empty string, but the problem is that script does not      recognise given empty space
-b) fix player positions, it is slighlty offset from central positions
+a) fix player positions, it is slighlty offset from central positions

@@ -12,11 +12,18 @@
 .dice-number-button {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
-    background-color: blueviolet;
+    background-color: hsl(271, 81%, 61%);
+    box-shadow: 0px 1.5px 20px hsl(271, 81%, 61%);
     color: white;
     border-radius: 5px;
     border: none;
     padding: 10px 25px;
+    cursor: pointer;
+}
+
+.dice-number-button:hover {
+    background-color: hsl(271, 81%, 71%);
+    box-shadow: 0px 1.5px 20px hsl(271, 81%, 61%);
 }
 
 .dice-generated-number {

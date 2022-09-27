@@ -17,6 +17,7 @@
     perspective-origin: 40% 40%;
     margin-top: 100px;
     transition: transform .3s;
+    box-shadow: 0px 1.5px 20px hsl(0, 100%, 57%);
 }
 
 .dice-side {

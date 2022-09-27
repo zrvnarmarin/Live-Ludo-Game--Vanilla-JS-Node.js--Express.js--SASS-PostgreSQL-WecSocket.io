@@ -38,9 +38,11 @@ function triggerDiceAnimation() {
 }
 
 export function getRandomDiceNumberAndTriggerDiceRotation() {
+    // Hide all before generated numbers, but leave place
+    diceGeneratedNumber.style.visibility = 'hidden'
+    
     // Generate random number
     const diceNumber = getRandomIntFromIntervals(1, 6).toString()
-    console.log(diceNumber)
 
     // Engage dice rotation and display correct dice side
     triggerDiceAnimation()
@@ -48,6 +50,7 @@ export function getRandomDiceNumberAndTriggerDiceRotation() {
 
     // Set dice generated number to generated value at the same time in which the dice stops rotating
     setTimeout(() => {
+        diceGeneratedNumber.style.visibility = 'visible'
         diceGeneratedNumber.innerText = diceNumber
     }, 1000)
 
