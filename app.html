@@ -145,18 +145,10 @@
             </div>
         </div>
 
-        <div id="parent" class="parent">
-            <div class="nesto">ndshgn</div>
-            <div class="ghdn">dghngh</div>
-            <div class="ndgf">dghngh</div>
-            <div class="nesto">dghngh</div>
-            <div class="nesto">dghngh</div>
-        </div>
-
     </div>
 
     <script type="module" defer> 
-        import {getElementOriginPoint, getElementPositionRelativeToTheViewport, outputClientMouseCoordinates} from './utillityFunctions.js'
+        import {getElementOriginPoint, getElementPositionRelativeToTheViewport, outputClientMouseCoordinates, getChildrenWithSpecificClass} from './utillityFunctions.js'
         
         // Player paths selectors
         const boardSquares = [...document.getElementsByClassName('board-square')]
@@ -180,7 +172,6 @@
                 isPlayerStartingPoint: boardSquare.className.includes('starting-board-square'),
                 x: getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2,
                 y: getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2,
-                currentPlayersOccupying: getChildrenWithSpecificClass(boardSquare, 'test-player-div')
             }
             
             wayPoints.push(waypoint)
@@ -188,14 +179,13 @@
 
         // console.log(wayPoints)
         wayPoints.forEach(waypoint => {
-            const {boardSquare, x, y} = waypoint
+            const {boardSquare, x, y, wayPointIndex} = waypoint
             const test = document.createElement('div')
-            test.classList.add('test-player-div')
+            test.innerText = wayPointIndex
 
             test.style.top = y + 'px'
             test.style.left = x + 'px'
             boardSquare.append(test)
-
         })
 
         // Determining all type of player`s path 
@@ -307,7 +297,6 @@
         ]
 
         // Test instantiating
-        
         let indexTwo = -1
 
         setInterval(() => {
@@ -324,7 +313,6 @@
 
         }, 15000)
 
-
         // Functions
         function getPlayerStartAreaRingColor(playerHomeRing) {
             if (playerHomeRing.className.includes('green-player-start-area-player-ring')) {
@@ -339,23 +327,6 @@
             else if (playerHomeRing.className.includes('red-player-start-area-player-ring')) {
                 return 'red'
             }
-        }
-
-
-        const parent = document.getElementById('parent')
-
-        function getChildrenWithSpecificClass(parentElement, className) {
-            let parentElementChildren = [...parentElement.children]
-            const test = []
-            parentElementChildren.forEach(child => {
-                if (child.className === className) {
-                    test.push(child)
-                    console.log(child.className, className)
-                }
-            })
-            console.log(test)
-
-            return test
         }
 
     </script>
