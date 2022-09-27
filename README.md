@@ -47,4 +47,4 @@ Prototyped player movement with tracking current mouse position and handling dum
 26.9.2022
 - all player`s starting positions DEFINED!
 - major code cleanup for better readability
-- palyer instantiate on their starting positions
+- player instantiate on their starting positions
