@@ -59,3 +59,6 @@ Prototyped player movement with tracking current mouse position and handling dum
 
 BUGS to fix: 
 a) fix player positions, it is slighlty offset from central positions
+
+28.9.2022
+- added flicker color animation class which for player´s start area wrapper when is next player´s turn
