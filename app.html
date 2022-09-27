@@ -5,341 +5,249 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ludo Game</title>
-    <link rel="stylesheet" href="board.css">
     <script src="https://kit.fontawesome.com/2fd1fc0d1b.js" crossorigin="anonymous"></script>
-    <script src="app.js" defer></script>
+    <script type="module" src="board.js" defer></script>
+    <script type="module" src="dice.js" defer></script>
+    <link rel="stylesheet" href="board.css">
+    <link rel="stylesheet" href="dice.css">
+    <link rel="stylesheet" href="appUI.css">
 </head>
 <body>
 
-    <div class="board">
-        <!-- First row -->
-        <div class="first-row">
-            <div class="start-area-wrapper blue-player-start-area-wrapper">
-                <div class="start-area">
-                    <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
+    <div class="main-wrapper">
+
+        <div class="board">
+            <!-- First row -->
+            <div class="first-row">
+                <div class="start-area-wrapper blue-player-start-area-wrapper">
+                    <div class="start-area">
+                        <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring blue-player-start-area-player-ring"></div>
+                    </div>
+                </div>
+                <div class="board-squares">
+                    <div class="board-square"></div>
+                    <div class="board-square board-square-arrow-holder">
+                        <i class="fa-sharp fa-solid fa-arrow-down yellow-arrow"></i>
+                    </div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square yellow-home-board-square"></div>
+                    <div class="board-square yellow-starting-board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square yellow-home-board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square yellow-home-board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square yellow-home-board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square yellow-home-board-square"></div>
+                    <div class="board-square"></div>
+                </div>
+                <div class="start-area-wrapper yellow-player-start-area-wrapper">
+                    <div class="start-area">
+                        <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
+                    </div>
                 </div>
             </div>
-            <div class="board-squares">
+        
+            <!-- Second row -->
+            <div class="second-row">
+            <div class="board-squares-rotated">
+                <div class="board-square"></div>
+                <div class="board-square blue-starting-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
                 <div class="board-square"></div>
                 <div class="board-square board-square-arrow-holder">
-                    <i class="fa-sharp fa-solid fa-arrow-down yellow-arrow"></i>
+                    <i class="fa-sharp fa-solid fa-arrow-right blue-arrow"></i>
+                </div>
+                <div class="board-square blue-home-board-square"></div>
+                <div class="board-square blue-home-board-square"></div>
+                <div class="board-square blue-home-board-square"></div>
+                <div class="board-square blue-home-board-square"></div>
+                <div class="board-square blue-home-board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+            </div>
+            <div class="triangles-center"></div>
+            <div class="board-squares-rotated">
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square"></div>
+                <div class="board-square green-home-board-square"></div>
+                <div class="board-square green-home-board-square"></div>
+                <div class="board-square green-home-board-square"></div>
+                <div class="board-square green-home-board-square"></div>
+                <div class="board-square green-home-board-square"></div>
+                <div class="board-square board-square-arrow-holder">
+                    <i class="fa-sharp fa-solid fa-arrow-left green-arrow"></i>
                 </div>
                 <div class="board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square yellow-home-board-square"></div>
-                <div class="board-square yellow-starting-board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square yellow-home-board-square"></div>
                 <div class="board-square"></div>
                 <div class="board-square"></div>
-                <div class="board-square yellow-home-board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square yellow-home-board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square yellow-home-board-square"></div>
+                <div class="board-square green-starting-board-square"></div>
                 <div class="board-square"></div>
             </div>
-            <div class="start-area-wrapper yellow-player-start-area-wrapper">
-                <div class="start-area">
-                    <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring yellow-player-start-area-player-ring"></div>
+            </div>
+            <!-- Third row -->
+            <div class="third-row">
+                <div class="start-area-wrapper red-player-start-area-wrapper">
+                    <div class="start-area">
+                        <div class="start-area-player-ring red-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring red-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring red-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring red-player-start-area-player-ring"></div>
+                    </div>
+                </div>
+                <div class="board-squares">
+                    <div class="board-square"></div>
+                    <div class="board-square red-home-board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square red-home-board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square red-home-board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square red-home-board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square red-starting-board-square"></div>
+                    <div class="board-square red-home-board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square"></div>
+                    <div class="board-square board-square-arrow-holder">
+                        <i class="fa-sharp fa-solid fa-arrow-up red-arrow"></i>
+                    </div>
+                    <div class="board-square"></div>
+                </div>
+                <div class="start-area-wrapper green-player-start-area-wrapper">
+                    <div class="start-area">
+                        <div class="start-area-player-ring green-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring green-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring green-player-start-area-player-ring"></div>
+                        <div class="start-area-player-ring green-player-start-area-player-ring"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Second row -->
-        <div class="second-row">
-        <div class="board-squares-rotated">
-            <div class="board-square"></div>
-            <div class="board-square blue-starting-board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square board-square-arrow-holder">
-                <i class="fa-sharp fa-solid fa-arrow-right blue-arrow"></i>
-            </div>
-            <div class="board-square blue-home-board-square"></div>
-            <div class="board-square blue-home-board-square"></div>
-            <div class="board-square blue-home-board-square"></div>
-            <div class="board-square blue-home-board-square"></div>
-            <div class="board-square blue-home-board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-        </div>
-        <div class="triangles-center"></div>
-        <div class="board-squares-rotated">
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square green-home-board-square"></div>
-            <div class="board-square green-home-board-square"></div>
-            <div class="board-square green-home-board-square"></div>
-            <div class="board-square green-home-board-square"></div>
-            <div class="board-square green-home-board-square"></div>
-            <div class="board-square board-square-arrow-holder">
-                <i class="fa-sharp fa-solid fa-arrow-left green-arrow"></i>
-            </div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square"></div>
-            <div class="board-square green-starting-board-square"></div>
-            <div class="board-square"></div>
-        </div>
         </div>
 
-        <!-- Third row -->
-        <div class="third-row">
-            <div class="start-area-wrapper red-player-start-area-wrapper">
-                <div class="start-area">
-                    <div class="start-area-player-ring red-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring red-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring red-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring red-player-start-area-player-ring"></div>
-                </div>
+        <div class="dice-section">
+            <div id="dice-generated-number" class="dice-generated-number">
+                &nbsp
             </div>
-            <div class="board-squares">
-                <div class="board-square"></div>
-                <div class="board-square red-home-board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square red-home-board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square red-home-board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square red-home-board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square red-starting-board-square"></div>
-                <div class="board-square red-home-board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square"></div>
-                <div class="board-square board-square-arrow-holder">
-                    <i class="fa-sharp fa-solid fa-arrow-up red-arrow"></i>
+            <div class="dice-and-roll-button">
+                <div class="dice">
+                    <div class="dice-side side-one front">
+                        <div class="dice-number-ring"></div>
+                    </div>
+                    <div class="dice-side side-two back">
+                        <div class="dice-number-ring side-two-column-one"></div>
+                        <div class="dice-number-ring side-two-column-two"></div>
+                    </div>
+                    <div class="dice-side side-three right">
+                        <div class="dice-number-ring side-three-column-one"></div>
+                        <div class="dice-number-ring side-three-column-two"></div>
+                        <div class="dice-number-ring side-three-column-three"></div>
+                    </div>
+                    <div class="dice-side side-four left">
+                        <div class="dice-number-ring side-four-column-one"></div>
+                        <div class="dice-number-ring side-four-column-two"></div>
+                        <div class="dice-number-ring side-four-column-one"></div>
+                        <div class="dice-number-ring side-four-column-two"></div>
+                    </div>
+                
+                    <div class="dice-side side-five top">
+                        <div class="side-five-column-one">
+                            <div class="dice-number-ring "></div>
+                            <div class="dice-number-ring "></div>
+                        </div>
+                        <div class="side-five-column-two">
+                            <div class="dice-number-ring "></div>
+                        </div>
+                        <div class="side-five-column-three">
+                            <div class="dice-number-ring "></div>
+                            <div class="dice-number-ring "></div>
+                        </div>
+                    </div>
+                    <div class="dice-side side-six bottom">
+                        <div class="side-six-column-one">
+                            <div class="dice-number-ring"></div>
+                            <div class="dice-number-ring"></div>
+                            <div class="dice-number-ring"></div>
+                        </div>
+                        <div class="side-six-column-two">
+                            <div class="dice-number-ring"></div>
+                            <div class="dice-number-ring"></div>
+                            <div class="dice-number-ring"></div>
+                        </div>
+                    </div>
+                
                 </div>
-                <div class="board-square"></div>
+                <button class="dice-number-button">
+                    Roll Dice
+                </button>
             </div>
-            <div class="start-area-wrapper green-player-start-area-wrapper">
-                <div class="start-area">
-                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
-                    <div class="start-area-player-ring green-player-start-area-player-ring"></div>
-                </div>
-            </div>
+        </div>
+
+        <div class="stats-section">
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
+            <p>Bok svima, ja ću nešto prikazivati u buducnosti</p>
         </div>
 
     </div>
 
-    <script type="module" defer> 
-        import {getElementOriginPoint, getElementPositionRelativeToTheViewport, outputClientMouseCoordinates, getChildrenWithSpecificClass} from './utillityFunctions.js'
-        
-        // Player paths selectors
-        const boardSquares = [...document.getElementsByClassName('board-square')]
-        const wayPoints = []
-        const wayPointIndexes = []
-
-        // Player homeboards selectors
-        const startAreaPlayerRings = [...document.getElementsByClassName('start-area-player-ring')]
-        const startAreaPlayerRingsCenters = []
-
-        // Creating path waypoints
-        boardSquares.forEach((boardSquare, index) => {
-
-            wayPointIndexes.push(index)
-
-            const waypoint = {
-                boardSquare: boardSquare,
-                wayPointIndex: wayPointIndexes[index],
-                classList: boardSquare.className.split(' '),
-                isHomeBoardSquare: boardSquare.className.includes('home-board-square'),
-                isPlayerStartingPoint: boardSquare.className.includes('starting-board-square'),
-                x: getElementPositionRelativeToTheViewport(boardSquares[index]).left + getElementOriginPoint(boardSquares[index]).x / 2,
-                y: getElementPositionRelativeToTheViewport(boardSquares[index]).top + getElementOriginPoint(boardSquares[index]).y / 2,
-            }
-            
-            wayPoints.push(waypoint)
-        })
-
-        // console.log(wayPoints)
-        wayPoints.forEach(waypoint => {
-            const {boardSquare, x, y, wayPointIndex} = waypoint
-            const test = document.createElement('div')
-            test.innerText = wayPointIndex
-
-            test.style.top = y + 'px'
-            test.style.left = x + 'px'
-            boardSquare.append(test)
-        })
-
-        // Determining all type of player`s path 
-        const yellowPlayerPath = [
-            wayPoints[5], wayPoints[8], wayPoints[11], wayPoints[14], wayPoints[17],
-            wayPoints[36], wayPoints[37], wayPoints[38], wayPoints[39], wayPoints[40],
-            wayPoints[41], wayPoints[47], wayPoints[53], wayPoints[51], wayPoints[50],
-            wayPoints[49], wayPoints[48], wayPoints[56], wayPoints[59], wayPoints[62],
-            wayPoints[65], wayPoints[68], wayPoints[71], wayPoints[70], wayPoints[69],
-            wayPoints[63], wayPoints[60], wayPoints[57], wayPoints[54],
-            wayPoints[35], wayPoints[34], wayPoints[33], wayPoints[32], wayPoints[31],
-            wayPoints[30], wayPoints[24], wayPoints[18], wayPoints[20], wayPoints[21],
-            wayPoints[22], wayPoints[23], wayPoints[15], wayPoints[12], wayPoints[9],
-            wayPoints[6], wayPoints[3], wayPoints[0], wayPoints[1], wayPoints[4],
-            wayPoints[7], wayPoints[10], wayPoints[13], wayPoints[16]
-        ]
-
-        const greenPlayerPath = [
-            wayPoints[52], wayPoints[51], wayPoints[50], wayPoints[49], wayPoints[48],
-            wayPoints[56], wayPoints[59], wayPoints[62], wayPoints[65], wayPoints[68],
-            wayPoints[71], wayPoints[70], wayPoints[69], wayPoints[63], wayPoints[60],
-            wayPoints[57], wayPoints[54], wayPoints[35], wayPoints[34], wayPoints[33],
-            wayPoints[32], wayPoints[31], wayPoints[30], wayPoints[24], wayPoints[18],
-            wayPoints[20], wayPoints[21], wayPoints[22], wayPoints[23],
-            wayPoints[15], wayPoints[12], wayPoints[9], wayPoints[6], wayPoints[3],
-            wayPoints[0], wayPoints[1], wayPoints[2], wayPoints[8], wayPoints[11],
-            wayPoints[14], wayPoints[17], wayPoints[36], wayPoints[37], wayPoints[38],
-            wayPoints[39], wayPoints[40], wayPoints[41], wayPoints[47], wayPoints[46],
-            wayPoints[45], wayPoints[44], wayPoints[43], wayPoints[42]
-        ]
-
-        const redPlayerPath = [
-            wayPoints[66], wayPoints[63], wayPoints[60], wayPoints[57], wayPoints[54],
-            wayPoints[35], wayPoints[34], wayPoints[33], wayPoints[32], wayPoints[31],
-            wayPoints[30], wayPoints[24], wayPoints[18], wayPoints[20], wayPoints[21],
-            wayPoints[22], wayPoints[23], wayPoints[15], wayPoints[12], wayPoints[9],
-            wayPoints[6], wayPoints[3], wayPoints[0], wayPoints[1], wayPoints[2],
-            wayPoints[8], wayPoints[11], wayPoints[14], wayPoints[17],
-            wayPoints[36], wayPoints[37], wayPoints[38], wayPoints[39], wayPoints[40],
-            wayPoints[41], wayPoints[47], wayPoints[53], wayPoints[51], wayPoints[50],
-            wayPoints[49], wayPoints[48], wayPoints[56], wayPoints[59], wayPoints[62],
-            wayPoints[65], wayPoints[68], wayPoints[71], wayPoints[70], wayPoints[67],
-            wayPoints[64], wayPoints[61], wayPoints[58], wayPoints[55]
-        ]
-
-        const bluePlayerPath = [
-            wayPoints[19], wayPoints[20], wayPoints[21], wayPoints[22], wayPoints[23],
-            wayPoints[15], wayPoints[12], wayPoints[9], wayPoints[6], wayPoints[3],
-            wayPoints[0], wayPoints[1], wayPoints[2], wayPoints[8],
-            wayPoints[11], wayPoints[14], wayPoints[17], wayPoints[36], wayPoints[37],
-            wayPoints[38], wayPoints[39], wayPoints[40], wayPoints[41], wayPoints[47],
-            wayPoints[53], wayPoints[51], wayPoints[50], wayPoints[49],
-            wayPoints[48], wayPoints[56], wayPoints[59], wayPoints[62], wayPoints[65],
-            wayPoints[68], wayPoints[71], wayPoints[70], wayPoints[69], wayPoints[63],
-            wayPoints[60], wayPoints[57], wayPoints[54], wayPoints[35], wayPoints[34],
-            wayPoints[33], wayPoints[32], wayPoints[31], wayPoints[30], wayPoints[24],
-            wayPoints[25], wayPoints[26], wayPoints[27], wayPoints[28], wayPoints[29]
-        ]
-
-        // Test Movement
-        let index = -1
-
-        const testPlayer = document.createElement('div')
-        testPlayer.classList.add('test-player-div')
-
-        setInterval(() => {
-            index++
-            const { boardSquare, x, y } = bluePlayerPath[index]
-            testPlayer.style.top = y + 'px'
-            testPlayer.style.left = x + 'px'
-            boardSquare.append(testPlayer)
-
-        }, 1500)
-
-        // Creating starting areas for each group of players
-        startAreaPlayerRings.forEach((playerRing, index) => {
-
-            const playerStartRing = {
-                playerRing: playerRing,
-                classList: playerRing.className.split(' '),
-                color: getPlayerStartAreaRingColor(playerRing),
-                x: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).left + getElementOriginPoint(startAreaPlayerRings[index]).x / 1.9,
-                y: getElementPositionRelativeToTheViewport(startAreaPlayerRings[index]).top + getElementOriginPoint(startAreaPlayerRings[index]).y / 1.9,
-                isPlayerOnRing: playerRing.hasChildNodes(),
-            }
-
-            startAreaPlayerRingsCenters.push(playerStartRing)
-        })
-
-        // Determining all type of player`s startin areas
-        const bluePlayerStartAreaRings = [
-            startAreaPlayerRingsCenters[0], startAreaPlayerRingsCenters[1], 
-            startAreaPlayerRingsCenters[2], startAreaPlayerRingsCenters[3]
-        ]
-
-        const yellowPlayerStartAreaRings = [
-            startAreaPlayerRingsCenters[4], startAreaPlayerRingsCenters[5], 
-            startAreaPlayerRingsCenters[6], startAreaPlayerRingsCenters[7]
-        ]
-
-        const redPlayerStartAreaRings = [
-            startAreaPlayerRingsCenters[8], startAreaPlayerRingsCenters[9], 
-            startAreaPlayerRingsCenters[10], startAreaPlayerRingsCenters[11]
-        ]
-
-        const greenPlayerStartAreaRings = [
-            startAreaPlayerRingsCenters[12], startAreaPlayerRingsCenters[13], 
-            startAreaPlayerRingsCenters[14], startAreaPlayerRingsCenters[15]
-        ]
-
-        // Test instantiating
-        let indexTwo = -1
-
-        setInterval(() => {
-            const testPlayerTwo = document.createElement('div')
-            testPlayerTwo.classList.add('test-player-div')
-
-            indexTwo++
-            const { playerRing, x, y, isPlayerOnRing } = bluePlayerStartAreaRings[indexTwo]
-
-            testPlayerTwo.style.top = y + 'px'
-            testPlayerTwo.style.left = x + 'px'
-
-            playerRing.append(testPlayerTwo)
-
-        }, 15000)
-
-        // Functions
-        function getPlayerStartAreaRingColor(playerHomeRing) {
-            if (playerHomeRing.className.includes('green-player-start-area-player-ring')) {
-                return 'green'
-            }
-            else if (playerHomeRing.className.includes('blue-player-start-area-player-ring')) {
-                return 'blue'
-            }
-            else if (playerHomeRing.className.includes('yellow-player-start-area-player-ring')) {
-                return 'yellow'
-            }
-            else if (playerHomeRing.className.includes('red-player-start-area-player-ring')) {
-                return 'red'
-            }
-        }
-
-    </script>
-    
-
-
-    
     <style>
         .test-player-div {
             width: 23.5px;
             height: 23.5px;
             background-color: blue;
-            border: 1px solid black;
             border-radius: 50%;
             left: 50px;
             top: 50px;

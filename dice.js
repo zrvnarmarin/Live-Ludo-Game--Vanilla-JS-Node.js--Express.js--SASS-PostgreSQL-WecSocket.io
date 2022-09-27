@@ -3,7 +3,9 @@ import {getRandomIntFromIntervals} from './utillityFunctions.js'
 // DOM selectors
 const dice = document.querySelector('.dice')
 const diceRollButton = document.querySelector('.dice-number-button')
+const diceGeneratedNumber = document.getElementById('dice-generated-number')
 
+// Functions
 function displayProperDiceSide(randomNumber) {
     if (randomNumber === '1') {
         dice.style.transform = 'rotateY(360deg)'
@@ -35,7 +37,7 @@ function triggerDiceAnimation() {
     }, 1000)
 }
 
-function getRandomDiceNumberAndTriggerDiceRotation() {
+export function getRandomDiceNumberAndTriggerDiceRotation() {
     // Generate random number
     const diceNumber = getRandomIntFromIntervals(1, 6).toString()
     console.log(diceNumber)
@@ -44,8 +46,13 @@ function getRandomDiceNumberAndTriggerDiceRotation() {
     triggerDiceAnimation()
     displayProperDiceSide(diceNumber)
 
+    // Set dice generated number to generated value at the same time in which the dice stops rotating
+    setTimeout(() => {
+        diceGeneratedNumber.innerText = diceNumber
+    }, 1000)
+
     return diceNumber
 }
 
-// Dice rotating on button click to show side that contains exact generated random number
+// Event Listeners
 diceRollButton.addEventListener('click', getRandomDiceNumberAndTriggerDiceRotation)

@@ -1,0 +1,35 @@
+.main-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.dice-section {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.dice-number-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 25px;
+}
+
+.dice-generated-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 6rem;
+}
+
+.dice-and-roll-button {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}

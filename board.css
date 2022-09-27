@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Open+Sans:wght@400;700&family=Poppins:wght@500;700&family=Raleway&family=Roboto&display=swap');
+
 :root {
     --clr-blue: hsl(200, 100%, 50%);
     --clr-red: hsl(0, 100%, 50%);
@@ -9,6 +11,7 @@
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -148,6 +151,7 @@ body {
 
 .board {
     position: relative;
+    width: max-content;
 }
 
 .board-squares {

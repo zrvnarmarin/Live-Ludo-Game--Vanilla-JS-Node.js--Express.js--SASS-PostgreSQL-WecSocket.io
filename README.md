@@ -50,3 +50,13 @@ Prototyped player movement with tracking current mouse position and handling dum
 
 27.9.2022
 - added wrapper function, which rotates dice and returns a random generated number at one call
+- script code has moved to JS files
+- board, cube and dummy player stats are moved into one single HTML script, and style is patched (HTML merging)
+- added displayed generated dice number to the screen, and it`s styling
+- added dice button styles
+- major script cleanups
+- added general application UI styling script
+
+BUGS to fix: 
+a) generated dice number shown after the player clicks 'Rool Dice' button --> it should be empty string, but the problem is that script does not      recognise given empty space
+b) fix player positions, it is slighlty offset from central positions

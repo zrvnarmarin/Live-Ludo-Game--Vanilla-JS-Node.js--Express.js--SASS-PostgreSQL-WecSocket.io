@@ -6,22 +6,16 @@
     --br-dice-side: 10px;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* Dice general classes */
 
 .dice {
-    position: relative;
+    /* position: relative; */
     width: 150px;
     height: 150px;
     transform-style: preserve-3d;
     /* perspective: 700px; OVO ISTRAZITI JOŠ!! */
     perspective-origin: 40% 40%;
-    margin-top: 400px;
+    margin-top: 100px;
     transition: transform .3s;
 }
 
