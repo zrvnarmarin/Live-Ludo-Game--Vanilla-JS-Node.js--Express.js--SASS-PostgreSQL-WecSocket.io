@@ -4,7 +4,7 @@ import {getRandomIntFromIntervals} from './utillityFunctions.js'
 const dice = document.querySelector('.dice')
 const diceRollButton = document.querySelector('.dice-number-button')
 
-function rotateDiceSide(randomNumber) {
+function displayProperDiceSide(randomNumber) {
     if (randomNumber === '1') {
         dice.style.transform = 'rotateY(360deg)'
     } 
@@ -35,17 +35,17 @@ function triggerDiceAnimation() {
     }, 1000)
 }
 
-function rotateDice() {
+function getRandomDiceNumberAndTriggerDiceRotation() {
     // Generate random number
     const diceNumber = getRandomIntFromIntervals(1, 6).toString()
     console.log(diceNumber)
 
-    // Engage dice rotation
+    // Engage dice rotation and display correct dice side
     triggerDiceAnimation()
-    rotateDiceSide(diceNumber)
+    displayProperDiceSide(diceNumber)
 
     return diceNumber
 }
 
 // Dice rotating on button click to show side that contains exact generated random number
-diceRollButton.addEventListener('click', rotateDice)
+diceRollButton.addEventListener('click', getRandomDiceNumberAndTriggerDiceRotation)
