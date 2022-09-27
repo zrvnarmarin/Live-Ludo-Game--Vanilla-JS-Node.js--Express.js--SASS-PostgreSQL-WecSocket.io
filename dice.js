@@ -36,9 +36,11 @@ function triggerDiceAnimation() {
 }
 
 function rotateDice() {
+    // Generate random number
     const diceNumber = getRandomIntFromIntervals(1, 6).toString()
     console.log(diceNumber)
 
+    // Engage dice rotation
     triggerDiceAnimation()
     rotateDiceSide(diceNumber)
 
