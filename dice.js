@@ -3,7 +3,7 @@ import {getRandomIntFromIntervals} from './utillityFunctions.js'
 // DOM selectors
 const dice = document.querySelector('.dice')
 const diceRollButton = document.querySelector('.dice-number-button')
-const diceGeneratedNumber = document.getElementById('dice-generated-number')
+export const diceGeneratedNumber = document.getElementById('dice-generated-number')
 
 // Functions
 function displayProperDiceSide(randomNumber) {

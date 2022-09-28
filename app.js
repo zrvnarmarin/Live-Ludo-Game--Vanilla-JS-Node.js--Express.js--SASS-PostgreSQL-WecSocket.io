@@ -8,7 +8,7 @@ function main(currentTime) {
     if (secondsSinceLastRender < 1 / renderSpeed) return
     
     lastRenderTime = currentTime
-    console.log('Rendered')
+    // console.log('Rendered')
 }
 
 window.requestAnimationFrame(main)

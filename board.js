@@ -126,31 +126,31 @@ let index = -1
 const testPlayer = document.createElement('div')
 testPlayer.classList.add('blue-player')
 
-setInterval(() => {
-    index++
-    const { boardSquare, x, y } = bluePlayerPath[index]
-    testPlayer.style.top = y + 'px'
-    testPlayer.style.left = x + 'px'
-    boardSquare.append(testPlayer)
+// setInterval(() => {
+//     index++
+//     const { boardSquare, x, y } = bluePlayerPath[index]
+//     testPlayer.style.top = y + 'px'
+//     testPlayer.style.left = x + 'px'
+//     boardSquare.append(testPlayer)
 
-}, 1500)
+// }, 1500)
 
 // TEST INSTANTIATING  
 let indexTwo = -1
 
-setInterval(() => {
-    const testPlayerTwo = document.createElement('div')
-    testPlayerTwo.classList.add('red-player')
+// setInterval(() => {
+//     const testPlayerTwo = document.createElement('div')
+//     testPlayerTwo.classList.add('red-player')
 
-    indexTwo++
-    const { playerRing, x, y, isPlayerOnRing } = bluePlayerStartAreaRings[indexTwo]
+//     indexTwo++
+//     const { playerRing, x, y, isPlayerOnRing } = bluePlayerStartAreaRings[indexTwo]
 
-    testPlayerTwo.style.top = y + 'px'
-    testPlayerTwo.style.left = x + 'px'
+//     testPlayerTwo.style.top = y + 'px'
+//     testPlayerTwo.style.left = x + 'px'
 
-    playerRing.append(testPlayerTwo)
+//     playerRing.append(testPlayerTwo)
 
-}, 15000)
+// }, 15000)
 
 // Functions
 function getPlayerStartAreaRingColor(playerHomeRing) {
