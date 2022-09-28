@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/2fd1fc0d1b.js" crossorigin="anonymous"></script>
     <script type="module" src="board.js" defer></script>
     <script type="module" src="dice.js" defer></script>
+    <script type="module" src="player.js" defer></script>
     <link rel="stylesheet" href="board.css">
     <link rel="stylesheet" href="dice.css">
     <link rel="stylesheet" href="appUI.css">
@@ -244,7 +245,7 @@
     </div>
 
     <style>
-        .test-player-div {
+        .blue-player {
             width: 23.5px;
             height: 23.5px;
             background-color: blue;
@@ -253,6 +254,40 @@
             top: 50px;
             transition: left .5s ease-in, top .5s ease-in;
             position: absolute;
+            border: 2px solid black;
+        }
+        .red-player {
+            width: 23.5px;
+            height: 23.5px;
+            background-color: rgb(255, 0, 0);
+            border-radius: 50%;
+            left: 50px;
+            top: 50px;
+            transition: left .5s ease-in, top .5s ease-in;
+            position: absolute;
+            border: 2px solid black;
+        }
+        .yellow-player {
+            width: 23.5px;
+            height: 23.5px;
+            background-color: rgb(202, 245, 11);
+            border-radius: 50%;
+            left: 50px;
+            top: 50px;
+            transition: left .5s ease-in, top .5s ease-in;
+            position: absolute;
+            border: 2px solid black;
+        }
+        .green-player {
+            width: 23.5px;
+            height: 23.5px;
+            background-color: rgb(12, 210, 21);
+            border-radius: 50%;
+            left: 50px;
+            top: 50px;
+            transition: left .5s ease-in, top .5s ease-in;
+            position: absolute;
+            border: 2px solid black;
         }
     </style>
 

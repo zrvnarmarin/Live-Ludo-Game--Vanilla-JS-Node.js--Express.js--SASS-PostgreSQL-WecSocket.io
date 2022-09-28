@@ -1,4 +1,4 @@
-import {getElementOriginPoint, getElementPositionRelativeToTheViewport, outputClientMouseCoordinates, getChildrenWithSpecificClass} from './utillityFunctions.js'
+import {getElementOriginPoint, getElementPositionRelativeToTheViewport} from './utillityFunctions.js'
         
 // Player paths selectors
 const boardSquares = [...document.getElementsByClassName('board-square')]
@@ -124,7 +124,7 @@ export const greenPlayerStartAreaRings = [
 let index = -1
 
 const testPlayer = document.createElement('div')
-testPlayer.classList.add('test-player-div')
+testPlayer.classList.add('blue-player')
 
 setInterval(() => {
     index++
@@ -140,7 +140,7 @@ let indexTwo = -1
 
 setInterval(() => {
     const testPlayerTwo = document.createElement('div')
-    testPlayerTwo.classList.add('test-player-div')
+    testPlayerTwo.classList.add('red-player')
 
     indexTwo++
     const { playerRing, x, y, isPlayerOnRing } = bluePlayerStartAreaRings[indexTwo]
@@ -150,7 +150,7 @@ setInterval(() => {
 
     playerRing.append(testPlayerTwo)
 
-}, 1500)
+}, 15000)
 
 // Functions
 function getPlayerStartAreaRingColor(playerHomeRing) {
