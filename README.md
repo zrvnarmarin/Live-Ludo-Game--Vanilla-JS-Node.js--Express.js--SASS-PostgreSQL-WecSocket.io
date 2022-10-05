@@ -64,3 +64,6 @@ a) fix player positions, it is slighlty offset from central positions
 - added flicker color animation class which for player´s start area wrapper when is next player´s turn
 - created player.js script; function for initial player initalization
 - set game loop in app.js; game loop renders game with desired speed
+
+5.10.2022
+- function for moving each player created
