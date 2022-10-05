@@ -19,22 +19,8 @@ function instantiatePlayers(playerStartAreaRings, playerColor) {
         player.style.top = y + 'px',
         player.style.left = x + 'px'
         playerRing.append(player)
-
-        console.log(player.style.top, player.style.left)
     })
-
-    console.log('Pozicije skupine igrača: ', playerStartAreaRings, playerColor)
 }
-
-instantiatePlayers(bluePlayerStartAreaRings, 'blue')
-instantiatePlayers(redPlayerStartAreaRings, 'red')
-instantiatePlayers(greenPlayerStartAreaRings, 'green')
-instantiatePlayers(yellowPlayerStartAreaRings, 'yellow')
-
-
-setInterval(() => {
-    console.log(diceGeneratedNumber.innerText)
-}, 2000)
 
 function returnPlayerObject(color) {
     const playerElement = document.createElement('div')
@@ -48,4 +34,20 @@ function returnPlayerObject(color) {
     }
 }
 
-console.log(returnPlayerObject('red'))
+function movePlayer(player, playerPath) {
+
+    const diceNumber = parseInt(diceGeneratedNumber.innerText)
+    if (diceNumber) {
+        console.log(diceNumber)
+        const { boardSquare, x, y } = playerPath[diceNumber]
+    
+        player.style.top = y + 'px'
+        player.style.left = x + 'px'
+        boardSquare.append(player)
+    } 
+    else return
+
+}
+    
+movePlayer(createPlayer('blue'), bluePlayerPath)
+
