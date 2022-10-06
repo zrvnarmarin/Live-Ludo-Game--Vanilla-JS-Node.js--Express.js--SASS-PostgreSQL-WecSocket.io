@@ -45,7 +45,6 @@ function movePlayer(player, playerPath) {
 }
 
 let player = createPlayer('blue')
-console.log('player: ', player)
 
 setInterval(() => {
     // movePlayer(player, bluePlayerPath)
@@ -78,6 +77,7 @@ const func = async () => {
     console.log('Sum: ' + sum)
 }
 
+let playerTwo = createPlayer('red')
 const move = (player, path, index) => {
 
     const { boardSquare, x, y } = path[index]
@@ -88,19 +88,21 @@ const move = (player, path, index) => {
     console.log(boardSquare, x, y)
 }
 
-let playerTwo = createPlayer('green')
-diceRollButton.addEventListener('click', async () => {
-    const data = await new Promise(resolve => {
-        const diceNumber = parseInt(diceGeneratedNumber.innerText)
 
-        if (diceNumber && !isNaN(diceNumber)) array.push(diceNumber)
+const pleja = (color, path) => {
+    const { boardSquare, x, y } = path
+    const element = document.createElement('div')
+    element.classList.add(`${color}-player`)
 
-        resolve(array)
-    })
-    console.log(data, ' array sa brojevima')
-    
-    let sum = data.reduce((prev, curr) => {
-        return prev + curr
-    }, 0)
-    move(playerTwo, greenPlayerPath, sum)
-})
+    return {
+        element: element,
+        classList: `${color}-player`,
+        path: path,
+        currentBoardSquare: boardSquare,
+        xPos: element.style.left = x + 'px',
+        yPos: element.style.top = y + 'px'
+    }
+}
+
+console.log(pleja('red', redPlayerPath[0]))
+
