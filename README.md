@@ -67,3 +67,7 @@ a) fix player positions, it is slighlty offset from central positions
 
 5.10.2022
 - function for moving each player created
+
+6.10.2022
+- the player moves as many places as the dice showed
+TO DO: figure out how to persist async data on button click and move player just on the button cclick and not on the time interval
