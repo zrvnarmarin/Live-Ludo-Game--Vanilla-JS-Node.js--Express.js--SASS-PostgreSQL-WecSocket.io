@@ -11,6 +11,12 @@ function createPlayer(color) {
     return playerElement
 }
 
+function createPlayerElement() {
+    const playerElement = document.createElement('div')
+
+    return playerElement
+}
+
 function returnPlayerObject(color) {
     const playerElement = document.createElement('div')
     playerElement.classList.add(`${color}-player`)
@@ -44,7 +50,7 @@ console.log('player: ', player)
 setInterval(() => {
     // movePlayer(player, bluePlayerPath)
     func()
-}, 3000);
+}, 1000);
 
 
 // Punjenje arraya i micanje igraća
@@ -72,6 +78,29 @@ const func = async () => {
     console.log('Sum: ' + sum)
 }
 
+const move = (player, path, index) => {
+
+    const { boardSquare, x, y } = path[index]
+
+    player.style.top = y + 'px'
+    player.style.left = x + 'px'
+    boardSquare.append(player)
+    console.log(boardSquare, x, y)
+}
+
+let playerTwo = createPlayer('green')
 diceRollButton.addEventListener('click', async () => {
+    const data = await new Promise(resolve => {
+        const diceNumber = parseInt(diceGeneratedNumber.innerText)
+
+        if (diceNumber && !isNaN(diceNumber)) array.push(diceNumber)
+
+        resolve(array)
+    })
+    console.log(data, ' array sa brojevima')
     
+    let sum = data.reduce((prev, curr) => {
+        return prev + curr
+    }, 0)
+    move(playerTwo, greenPlayerPath, sum)
 })
