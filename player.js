@@ -42,21 +42,3 @@ const func = async () => {
     boardSquare.append(player)
     console.log('Sum: ' + sum)
 }
-
-//////////////////////////////////////////////////////////
-const createPlayer = (color, path) => {
-    const { boardSquare, x, y } = path
-    const element = document.createElement('div')
-    element.classList.add(`${color}-player`)
-
-    return {
-        playerElement: element,
-        classList: `${color}-player`,
-        path: path,
-        currentBoardSquare: boardSquare,
-        xPos: element.style.left = x + 'px',
-        yPos: element.style.top = y + 'px',
-        parent: element.parentElement
-    }
-}
-console.log(createPlayer('red', redPlayerPath))
