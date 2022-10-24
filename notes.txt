@@ -1,0 +1,7 @@
+BOARD:
+- 72 tiles
+
+TILE:
+- startTile === bool
+- homeTile === bool
+- isOccupied === bool

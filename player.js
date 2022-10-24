@@ -4,50 +4,16 @@ import {diceGeneratedNumber} from './dice.js'
 
 const diceRollButton = document.querySelector('.dice-number-button')
 
-function createPlayer(color) {
+function createPlayerElement(color) {
     const playerElement = document.createElement('div')
     playerElement.classList.add(`${color}-player`)
 
     return playerElement
 }
 
-function createPlayerElement() {
-    const playerElement = document.createElement('div')
-
-    return playerElement
-}
-
-function returnPlayerObject(color) {
-    const playerElement = document.createElement('div')
-    playerElement.classList.add(`${color}-player`)
-
-    return {
-        player: playerElement,
-        classList: playerElement.className.split(' '),
-        posY: playerElement.style.top,
-        posX: playerElement.style.left
-    }
-}
-
-function movePlayer(player, playerPath) {
-
-    const diceNumber = parseInt(diceGeneratedNumber.innerText)
-
-    if (diceNumber && !isNaN(diceNumber)) {
-
-        const { boardSquare, x, y } = playerPath[diceNumber]
-    
-        player.style.top = y + 'px'
-        player.style.left = x + 'px'
-        boardSquare.append(player)
-    } 
-    else return
-}
-
-let player = createPlayer('blue')
+let player = createPlayerElement('blue')
 
 setInterval(() => {
-    // movePlayer(player, bluePlayerPath)
     func()
 }, 1000);
 
@@ -77,32 +43,20 @@ const func = async () => {
     console.log('Sum: ' + sum)
 }
 
-let playerTwo = createPlayer('red')
-const move = (player, path, index) => {
-
-    const { boardSquare, x, y } = path[index]
-
-    player.style.top = y + 'px'
-    player.style.left = x + 'px'
-    boardSquare.append(player)
-    console.log(boardSquare, x, y)
-}
-
-
-const pleja = (color, path) => {
+//////////////////////////////////////////////////////////
+const createPlayer = (color, path) => {
     const { boardSquare, x, y } = path
     const element = document.createElement('div')
     element.classList.add(`${color}-player`)
 
     return {
-        element: element,
+        playerElement: element,
         classList: `${color}-player`,
         path: path,
         currentBoardSquare: boardSquare,
         xPos: element.style.left = x + 'px',
-        yPos: element.style.top = y + 'px'
+        yPos: element.style.top = y + 'px',
+        parent: element.parentElement
     }
 }
-
-console.log(pleja('red', redPlayerPath[0]))
-
+console.log(createPlayer('red', redPlayerPath))

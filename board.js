@@ -120,39 +120,6 @@ export const greenPlayerStartAreaRings = [
     startAreaPlayerRingsCenters[14], startAreaPlayerRingsCenters[15]
 ]
 
-// TEST MOVEMENT
-let index = -1
-
-const testPlayer = document.createElement('div')
-testPlayer.classList.add('blue-player')
-
-// setInterval(() => {
-//     index++
-//     const { boardSquare, x, y } = bluePlayerPath[index]
-//     testPlayer.style.top = y + 'px'
-//     testPlayer.style.left = x + 'px'
-//     boardSquare.append(testPlayer)
-
-// }, 1500)
-
-// TEST INSTANTIATING  
-let indexTwo = -1
-
-// setInterval(() => {
-//     const testPlayerTwo = document.createElement('div')
-//     testPlayerTwo.classList.add('red-player')
-
-//     indexTwo++
-//     const { playerRing, x, y, isPlayerOnRing } = bluePlayerStartAreaRings[indexTwo]
-
-//     testPlayerTwo.style.top = y + 'px'
-//     testPlayerTwo.style.left = x + 'px'
-
-//     playerRing.append(testPlayerTwo)
-
-// }, 15000)
-
-// Functions
 function getPlayerStartAreaRingColor(playerHomeRing) {
     if (playerHomeRing.className.includes('green-player-start-area-player-ring')) {
         return 'green'
@@ -168,7 +135,7 @@ function getPlayerStartAreaRingColor(playerHomeRing) {
     }
 }
 
-// console.log(wayPoints)
+// Show indexed waypoint on the board
 wayPoints.forEach(waypoint => {
     const {boardSquare, x, y, wayPointIndex} = waypoint
     const test = document.createElement('div')
